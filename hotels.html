@@ -2,7 +2,7 @@
 
 <html lang="en"><head>
 <meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<link href="assets/style.css?v=8.0.1-privacy-polish" rel="stylesheet"/><meta content="#082d4a" name="theme-color"/>
+<link href="assets/style.css?v=8.0.2-safer-notes" rel="stylesheet"/><meta content="#082d4a" name="theme-color"/>
 <title>Hotels · Northern Italy</title>
 <meta content="Hotels · Northern Italy. Personalized September 2026 Northern Italy itinerary, reservations, maps and practical travel guidance." name="description"/><meta content="light" name="color-scheme"/></head>
 <body>
@@ -27,10 +27,10 @@
 <section class="hotel-route-cta"><div><h3>Around your stays</h3><p>Open four hotel-centered route maps with nearby anchors and one-tap live directions.</p></div><a href="hotel-routes.html">Open route maps</a></section>
 <div class="hotel-grid" id="hotelGrid">
 </div>
-<div class="callout"><h3>Privacy note</h3><p>Do not enter passport numbers or payment-card details. Hotel names, addresses, parking notes and confirmation reminders are appropriate.</p></div>
+<div class="callout"><h3>Private reservation details belong in Companion</h3><p>This public stays page contains general planning guidance only. Store confirmation numbers, access instructions, host contacts and other traveler-specific details in the signed-in Companion reservation area.</p><p><a class="action" href="companion/reservations.html">Open secure reservations →</a></p></div>
 </main>
 <div class="bottomnav"><a href="index.html">Home</a><a href="itinerary.html">Plan</a><a href="map.html">Map</a><a href="hotels.html">Hotels</a></div>
-<footer>Northern Italy Traveler’s Companion · September 2026 Edition · v8.0.1</footer>
+<footer>Northern Italy Traveler’s Companion · September 2026 Edition · v8.0.2</footer>
 <script>
 const stops=[
   {key:'ship',title:'Viking ship · Marghera',place:'Venice lagoon',dates:'Aug 31–Sept 1',status:'Confirmed cruise stay',checkin:'On board',checkout:'Sept 1 disembarkation',source:'',guide:'venice.html',maps:'https://maps.apple.com/?q=Marghera+Venice',arrival:'Confirm the Marghera/Fusina transfer sequence and luggage instructions before the final cruise evening.',essentials:'Keep disembarkation documents, water-taxi alternatives and the Hotel Al Sotoportego address available offline.',departure:'Leave the ship with Venice hotel directions and a clearly separated day bag.'},
@@ -51,14 +51,11 @@ stops.forEach(({key,title,place,dates,status,checkin,checkout,source,guide,maps,
   <section class="stay-template-section"><h3>Arrival plan</h3><p>${arrival}</p></section>
   <section class="stay-template-section"><h3>Stay essentials</h3><p>${essentials}</p></section>
   <section class="stay-template-section"><h3>Departure plan</h3><p>${departure}</p></section>
-  <details class="stay-private-details"><summary>Add or update private booking notes</summary>
-    <div class="stay-form-grid">
-      <label>Hotel name<input data-field="name" placeholder="Enter hotel"></label>
-      <label>Address or directions<input data-field="address" placeholder="Address, dock, parking or arrival note"></label>
-      <label class="full">Booking notes<textarea data-field="notes" placeholder="Confirmation reminder, breakfast, access code or contact note…"></textarea></label>
-    </div>
-    <div class="hotel-save">Saved locally on this device.</div>
-  </details>
+  <aside class="stay-secure-note" aria-label="Private reservation storage">
+    <strong>Private details are not stored on this public page.</strong>
+    <p>Use the signed-in Companion for confirmation numbers, access instructions, host contacts and traveler-specific notes.</p>
+    <a class="text-action" href="companion/reservations.html">Open secure reservations →</a>
+  </aside>
   <div class="stay-actions">
     <a class="action" href="${guide}">Destination guide</a>
     <a class="action secondary-action" href="hotel-routes.html#${key === 'como' ? 'como' : key === 'ship' ? 'venice' : key}">Nearby routes</a>
@@ -66,19 +63,11 @@ stops.forEach(({key,title,place,dates,status,checkin,checkout,source,guide,maps,
     ${source?`<a class="text-action" href="${source}" target="_blank" rel="noopener">Booking source ↗</a>`:''}
   </div>`;
   grid.appendChild(card);
-  const storageKey='nitc-hotel-'+key;
-  const saved=JSON.parse(localStorage.getItem(storageKey)||'{}');
-  card.querySelectorAll('[data-field]').forEach(el=>{
-    el.value=saved[el.dataset.field]||'';
-    el.addEventListener('input',()=>{
-      const obj={};
-      card.querySelectorAll('[data-field]').forEach(i=>obj[i.dataset.field]=i.value);
-      localStorage.setItem(storageKey,JSON.stringify(obj));
-    });
-  });
+  // Remove legacy browser-only hotel notes from earlier releases.
+  try{localStorage.removeItem('nitc-hotel-'+key)}catch(e){}
 });
 </script>
-<script src="assets/app.js?v=8.0.1-privacy-polish"></script>
+<script src="assets/app.js?v=8.0.2-safer-notes"></script>
 <div aria-label="Travel shortcuts" class="travel-dock">
 <a class="dock-today" href="today.html"><span>Today</span><strong>Trip mode</strong></a>
 <a aria-label="Open maps" href="map.html">Map</a>

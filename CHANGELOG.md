@@ -175,3 +175,9 @@
 
 ## v6.0 — Design System Repair
 - Tablet-safe typography, crop-safe destination cards, brighter title spread, and non-obscuring navigation dock.
+
+
+## v8.0.2 — Safer Notes Polish
+- Removed public-page hotel note entry and redirected private reservation details to authenticated Companion reservations.
+- Purged legacy `nitc-hotel-*` browser-local records when the Stays page opens.
+- Updated cache and release labels.
