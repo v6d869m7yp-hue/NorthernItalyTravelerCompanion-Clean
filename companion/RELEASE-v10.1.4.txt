@@ -1,0 +1,3 @@
+Istanbul–Viking Travel Companion v10.1.4 — Invitation Query Fix
+
+Fixes the owner invitation-history query so Firestore rules can authorize the complete result set. Preserves traveler roles, legacy-trip bootstrap, privacy polish, multi-file uploads, and Safari diagnostics fixes.

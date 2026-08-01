@@ -193,7 +193,12 @@ Multiple reservation screenshots are supported (up to 12 files per upload).
 ## v8.1.2
 - Added one-time legacy trip membership bootstrap for Traveler Invitations.
 
-## v8.1.3 — Cache Bust & Metadata Fix
+## v8.1.4 — Cache Bust & Metadata Fix
 - Corrected stale v10.0.2 asset query strings on key Companion pages.
-- Aligned Companion runtime and service-worker metadata at v10.1.3.
+- Aligned Companion runtime and service-worker metadata at v10.1.4.
 - Restored a green Release metadata readiness check after cache refresh.
+
+## v8.1.4 — Invitation Query Fix
+
+- Fixed Firestore authorization for owner invitation-history queries by filtering on both trip ID and inviter UID.
+- Bumped Companion runtime and cache metadata to v10.1.4.
