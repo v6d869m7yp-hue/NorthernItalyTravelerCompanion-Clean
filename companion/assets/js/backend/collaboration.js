@@ -20,8 +20,8 @@ async function createInvite(email,role='editor'){
  await s.api.setDoc(ref,{tripId:t.id,tripLabel:t.label||'Shared trip',email:normalized,role:cleanRole(role),status:'pending',inviterUid:s.user.uid,inviterEmail:emailOf(s),createdAt:s.api.serverTimestamp(),updatedAt:s.api.serverTimestamp()});
  return ref.id;
 }
-async function listTripInvites(){const s=requireState(),id=activeTripId();if(!id)return[];const q=s.api.query(s.api.collection(s.db,'invitations'),s.api.where('tripId','==',id),s.api.where('inviterUid','==',s.user.uid));const snap=await s.api.getDocs(q);return snap.docs.map(view).sort((a,b)=>String(b.createdAt||'').localeCompare(String(a.createdAt||'')));}
-async function listMyInvites(){const s=requireState(),email=emailOf(s);if(!email)return[];const q=s.api.query(s.api.collection(s.db,'invitations'),s.api.where('email','==',email),s.api.where('status','==','pending'));const snap=await s.api.getDocs(q);return snap.docs.map(view).sort((a,b)=>String(b.createdAt||'').localeCompare(String(a.createdAt||'')));}
+async function listTripInvites(){const s=requireState(),id=activeTripId();if(!id)return[];try{const q=s.api.query(s.api.collection(s.db,'invitations'),s.api.where('tripId','==',id),s.api.where('inviterUid','==',s.user.uid));const snap=await s.api.getDocs(q);return snap.docs.map(view).sort((a,b)=>String(b.createdAt||'').localeCompare(String(a.createdAt||'')));}catch(e){throw new Error('Owner invitation history: '+(e.message||e));}}
+async function listMyInvites(){const s=requireState(),email=emailOf(s);if(!email)return[];try{const q=s.api.query(s.api.collection(s.db,'invitations'),s.api.where('email','==',email),s.api.where('status','==','pending'));const snap=await s.api.getDocs(q);return snap.docs.map(view).sort((a,b)=>String(b.createdAt||'').localeCompare(String(a.createdAt||'')));}catch(e){throw new Error('Invitations for your email: '+(e.message||e));}}
 async function acceptInvite(inviteId){
  const s=requireState(),email=emailOf(s),inviteRef=s.api.doc(s.db,'invitations',inviteId);
  let acceptedTrip=null;
