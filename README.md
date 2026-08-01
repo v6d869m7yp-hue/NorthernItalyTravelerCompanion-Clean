@@ -1,3 +1,7 @@
+# v8.0.3 update
+
+Multiple reservation screenshots are supported (up to 12 files per upload).
+
 # Northern Italy Traveler’s Companion — Version 028.2
 
 Version 028.2 completes the first itinerary conversion and removes outdated route data from the former trip plan.

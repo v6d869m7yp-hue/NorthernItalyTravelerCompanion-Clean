@@ -1,3 +1,7 @@
+# v8.0.3 update
+
+Multiple reservation screenshots are supported (up to 12 files per upload).
+
 ## v7.0.1 — Traveler’s Emergency Pack
 - Added fully offline emergency reference page, menu item, Practical shortcut and device-only editable fields.
 
