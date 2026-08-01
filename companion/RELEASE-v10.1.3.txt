@@ -1,0 +1,3 @@
+Istanbul–Viking Travel Companion v10.1.3 — Cache Bust & Metadata Fix
+
+Forces Safari to load the matching 10.1.3 runtime assets and aligns Diagnostics, build metadata, service-worker identity, and cache identity. Includes traveler invitations and legacy-trip membership bootstrap.
