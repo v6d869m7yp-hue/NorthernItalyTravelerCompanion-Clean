@@ -1,0 +1,10 @@
+Istanbul · Viking Travel Companion v10.1.0 — Traveler Invitations & Roles
+
+- Adds email-based invitations for the active trip.
+- Adds Owner, Editor and Viewer roles.
+- Adds pending, accepted and revoked invitation states.
+- Lets owners change roles and remove travelers.
+- Lets invited travelers accept after signing in with the invited email.
+- Keeps decrypted private Vault content separate from shared trip membership.
+- Adds Firebase email/password account creation.
+- Requires deployment of the included Firestore rules.

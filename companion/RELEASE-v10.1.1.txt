@@ -1,0 +1,3 @@
+Istanbul–Viking Travel Companion v10.1.1 — Update Metadata Repair
+
+Aligns runtime release metadata, build-info, service-worker URL, and cache identity so Diagnostics can verify the deployed build and Safari can discover updates reliably. Includes v10.1.0 traveler invitations and roles.

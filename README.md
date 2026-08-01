@@ -1,3 +1,5 @@
+> Current release: v8.1.1 — Update Metadata Repair
+
 # v8.0.5 Privacy & Relink Polish
 
 # v8.0.4 update
@@ -16,3 +18,7 @@ Version 028.2 completes the first itinerary conversion and removes outdated rout
 - Added a three-night Stresa plan with a flexible Piedmont day.
 - Added booking-source buttons and a verification warning for the supplied September 9–10 link.
 - Updated mobile navigation to match the confirmed itinerary while retaining future-trip chapters.
+
+
+## v8.1.0 Traveler Invitations
+Deploy `companion/firestore.rules`, then use Companion → Travel Vault → Share & sync to invite travelers by email.

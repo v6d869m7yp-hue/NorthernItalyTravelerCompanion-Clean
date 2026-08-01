@@ -287,3 +287,6 @@ html.travel-mode{font-size:17px}body.travel-mode{padding-bottom:5.4rem}html.trav
 .document-file-list:empty{display:none}
 .document-file-list span{display:flex;justify-content:space-between;gap:1rem;padding:.45rem .6rem;border:1px solid rgba(13,43,67,.16);border-radius:.55rem;background:rgba(255,255,255,.7);font-size:.82rem}
 .document-file-list small{white-space:nowrap;color:#5b6873}
+
+/* v10.1 traveler invitations */
+.vault-members-list{display:grid;gap:.75rem;margin-top:1rem}.vault-member-row{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--line,#d9d4ca)}.vault-member-row:last-child{border-bottom:0}.vault-member-row small{display:block;color:var(--muted,#64707a);margin-top:.2rem}.vault-member-row select{min-width:8rem;padding:.65rem;border:1px solid var(--line,#ccd4dc);border-radius:.75rem;background:#fff}@media(max-width:680px){.vault-member-row{align-items:flex-start;flex-direction:column}.vault-member-row .button-row{width:100%}.vault-member-row select{flex:1}}

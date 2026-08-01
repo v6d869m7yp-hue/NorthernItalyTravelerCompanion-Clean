@@ -88,6 +88,11 @@ async function signIn(email,password,remember=true){
  await state.api.setPersistence(state.auth,remember?state.api.browserLocalPersistence:state.api.browserSessionPersistence);
  return state.api.signInWithEmailAndPassword(state.auth,email,password);
 }
+async function createAccount(email,password,remember=true){
+ await initialize();if(!state.auth)throw new Error(state.error||'Firebase is not configured.');
+ await state.api.setPersistence(state.auth,remember?state.api.browserLocalPersistence:state.api.browserSessionPersistence);
+ return state.api.createUserWithEmailAndPassword(state.auth,email,password);
+}
 async function signOutUser(){if(state.auth)await state.api.signOut(state.auth);}
 async function sendPasswordReset(email){
  await initialize();
@@ -96,5 +101,5 @@ async function sendPasswordReset(email){
  return state.api.sendPasswordResetEmail(state.auth,target);
 }
 async function refreshUser(){if(state.user){await state.api.reload(state.user);state.user=state.auth.currentUser;emit();}return publicState();}
-window.IVTC.firebase=Object.freeze({initialize,status:publicState,signIn,signOut:signOutUser,sendPasswordReset,refreshUser,_state:state});
+window.IVTC.firebase=Object.freeze({initialize,status:publicState,signIn,createAccount,signOut:signOutUser,sendPasswordReset,refreshUser,_state:state});
 })();
