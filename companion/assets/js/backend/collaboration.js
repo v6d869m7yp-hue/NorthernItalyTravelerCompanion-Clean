@@ -14,8 +14,8 @@ async function createInvite(email,role='editor'){
  if(t.ownerUid!==s.user.uid)throw new Error('Only the trip owner can invite travelers.');
  if(!/^\S+@\S+\.\S+$/.test(normalized))throw new Error('Enter a valid email address.');
  if(normalized===emailOf(s))throw new Error('You are already the owner of this trip.');
- const pending=s.api.query(s.api.collection(s.db,'invitations'),s.api.where('tripId','==',t.id),s.api.where('email','==',normalized),s.api.where('status','==','pending'));
- const existing=await s.api.getDocs(pending);if(!existing.empty)throw new Error('A pending invitation already exists for this email.');
+ const pending=s.api.query(s.api.collection(s.db,'invitations'),s.api.where('inviterUid','==',s.user.uid));
+ const existing=await s.api.getDocs(pending);if(existing.docs.some(doc=>{const d=doc.data();return d.tripId===t.id&&String(d.email||'').toLowerCase()===normalized&&d.status==='pending';}))throw new Error('A pending invitation already exists for this email.');
  const ref=s.api.doc(s.api.collection(s.db,'invitations'));
  await s.api.setDoc(ref,{tripId:t.id,tripLabel:t.label||'Shared trip',email:normalized,role:cleanRole(role),status:'pending',inviterUid:s.user.uid,inviterEmail:emailOf(s),createdAt:s.api.serverTimestamp(),updatedAt:s.api.serverTimestamp()});
  return ref.id;

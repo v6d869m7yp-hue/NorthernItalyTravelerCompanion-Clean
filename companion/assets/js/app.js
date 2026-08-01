@@ -92,7 +92,7 @@ function unifiedJourneySwitcher(){
   window.resetJourneySwitcherPosition=()=>{localStorage.removeItem(storageKey);restore();nav.classList.add('position-reset');setTimeout(()=>nav.classList.remove('position-reset'),500)};
 }
 
-const APP_RELEASE={version:'10.1.5',buildId:'v10.1.5-vault-asset-permissions-fix'};
+const APP_RELEASE={version:'10.1.6',buildId:'v10.1.6-vault-asset-permissions-fix'};
 let updateRegistration=null;
 let appUpdatesPromise=null;
 function showUpdateBanner(reg){

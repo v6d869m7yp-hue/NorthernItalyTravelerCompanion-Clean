@@ -1,2 +1,2 @@
-Istanbul–Viking Travel Companion v10.1.5
+Istanbul–Viking Travel Companion v10.1.6
 Vault asset and permissions fix

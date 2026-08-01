@@ -193,7 +193,7 @@ Multiple reservation screenshots are supported (up to 12 files per upload).
 ## v8.1.2
 - Added one-time legacy trip membership bootstrap for Traveler Invitations.
 
-## v8.1.5 — Cache Bust & Metadata Fix
+## v8.1.6 — Cache Bust & Metadata Fix
 - Corrected stale v10.0.2 asset query strings on key Companion pages.
 - Aligned Companion runtime and service-worker metadata at v10.1.4.
 - Restored a green Release metadata readiness check after cache refresh.
