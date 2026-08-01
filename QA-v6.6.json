@@ -1,0 +1,9 @@
+{
+  "version": "6.6.0",
+  "checks": {
+    "map_geography": "passed",
+    "map_legend": "passed",
+    "version_refs": "passed",
+    "lf_policy": "passed"
+  }
+}

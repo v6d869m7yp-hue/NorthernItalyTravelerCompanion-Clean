@@ -1,0 +1,19 @@
+{
+  "version": "v7.0 RC8",
+  "html_pages": 21,
+  "missing_local_references": [
+    [
+      "hotels.html",
+      "${guide}"
+    ],
+    [
+      "hotels.html",
+      "${maps}"
+    ],
+    [
+      "hotels.html",
+      "${source}"
+    ]
+  ],
+  "remote_display_images": 5
+}

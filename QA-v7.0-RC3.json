@@ -1,0 +1,7 @@
+{
+  "version": "7.0 RC3",
+  "fix": "isolated publication navigation",
+  "primary_navigation_class": "publication-nav",
+  "open_state_class": "is-open",
+  "critical_assets_strategy": "network-first no-store"
+}

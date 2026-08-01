@@ -1,0 +1,472 @@
+{
+  "primary": [
+    {
+      "label": "Today",
+      "href": "/index.html",
+      "key": "home"
+    },
+    {
+      "label": "Daily Briefing",
+      "href": "/daily-briefing.html",
+      "key": "briefing"
+    },
+    {
+      "label": "Assistant",
+      "href": "/traveler-assistant.html",
+      "key": "assistant"
+    },
+    {
+      "label": "Trip Map",
+      "href": "/trip-map.html",
+      "key": "map"
+    },
+    {
+      "label": "Trip at a Glance",
+      "href": "/trip-at-a-glance.html",
+      "key": "glance"
+    },
+    {
+      "label": "Trip Binder",
+      "href": "/trip-binder.html",
+      "key": "binder"
+    },
+    {
+      "label": "Itinerary",
+      "href": "/timeline.html",
+      "key": "timeline"
+    },
+    {
+      "label": "Reservations",
+      "href": "/reservations.html",
+      "key": "reservations"
+    },
+    {
+      "label": "Documents",
+      "href": "/documents.html",
+      "key": "documents"
+    },
+    {
+      "label": "Journal",
+      "href": "/journal.html",
+      "key": "journal"
+    },
+    {
+      "label": "Istanbul",
+      "href": "/istanbul/index.html",
+      "key": "istanbul"
+    },
+    {
+      "label": "Cruise",
+      "href": "/cruise/index.html",
+      "key": "cruise"
+    },
+    {
+      "label": "Ports",
+      "href": "/ports/index.html",
+      "key": "ports"
+    },
+    {
+      "label": "Search",
+      "href": "/search.html",
+      "key": "search"
+    },
+    {
+      "label": "Travel Vault",
+      "href": "/vault.html",
+      "key": "vault"
+    },
+    {
+      "label": "Trip Sync",
+      "href": "/trip-sync.html",
+      "key": "tripsync"
+    },
+    {
+      "label": "Backend Setup",
+      "href": "/backend-setup.html",
+      "key": "backend"
+    }
+  ],
+  "istanbul": [
+    {
+      "label": "Overview",
+      "href": "/istanbul/index.html"
+    },
+    {
+      "label": "Visual Guide",
+      "href": "/istanbul/visuals.html"
+    },
+    {
+      "label": "Four-Day Plan",
+      "href": "/istanbul/itinerary.html"
+    },
+    {
+      "label": "Sultanahmet Premium",
+      "href": "/istanbul/sultanahmet/index.html"
+    },
+    {
+      "label": "Day 1 \u00b7 Arrival",
+      "href": "/istanbul/days/arrival.html"
+    },
+    {
+      "label": "Day 2 \u00b7 Old City",
+      "href": "/istanbul/days/old-city.html"
+    },
+    {
+      "label": "Day 3 \u00b7 Bosphorus",
+      "href": "/istanbul/days/bosphorus.html"
+    },
+    {
+      "label": "Day 4 \u00b7 Markets",
+      "href": "/istanbul/days/markets.html"
+    },
+    {
+      "label": "Embarkation",
+      "href": "/istanbul/embarkation.html"
+    },
+    {
+      "label": "From Istanbul to Viking",
+      "href": "/istanbul/to-viking.html"
+    },
+    {
+      "label": "Maps & Routes",
+      "href": "/istanbul/maps.html"
+    },
+    {
+      "label": "Restaurants",
+      "href": "/istanbul/restaurants.html"
+    },
+    {
+      "key": "explorer",
+      "label": "The Explorer",
+      "href": "/istanbul/explorer.html"
+    },
+    {
+      "label": "Practical",
+      "href": "/istanbul/practical.html"
+    }
+  ],
+  "cruise": [
+    {
+      "label": "Cruise Control Center",
+      "href": "/cruise/index.html"
+    },
+    {
+      "label": "Embarkation Day",
+      "href": "/cruise/embarkation.html"
+    },
+    {
+      "label": "Ship Essentials",
+      "href": "/cruise/ship-guide.html"
+    },
+    {
+      "label": "Life Onboard",
+      "href": "/cruise/daily-life.html"
+    },
+    {
+      "label": "Tomorrow in Port",
+      "href": "/cruise/tomorrow.html"
+    },
+    {
+      "label": "Disembarkation",
+      "href": "/cruise/disembarkation.html"
+    }
+  ],
+  "ephesus": [
+    {
+      "label": "Ephesus Overview",
+      "href": "/ports/ephesus/index.html"
+    },
+    {
+      "label": "Before You Go",
+      "href": "/ports/ephesus/before-you-go.html"
+    },
+    {
+      "label": "Site Map & Route",
+      "href": "/ports/ephesus/route.html"
+    },
+    {
+      "label": "Library of Celsus",
+      "href": "/ports/ephesus/library-of-celsus.html"
+    },
+    {
+      "label": "Terrace Houses",
+      "href": "/ports/ephesus/terrace-houses.html"
+    },
+    {
+      "label": "Great Theatre",
+      "href": "/ports/ephesus/great-theatre.html"
+    },
+    {
+      "label": "Photography",
+      "href": "/ports/ephesus/photography.html"
+    }
+  ],
+  "rhodes": [
+    {
+      "label": "Rhodes Overview",
+      "href": "/ports/rhodes/index.html"
+    },
+    {
+      "label": "Morning Old Town",
+      "href": "/ports/rhodes/old-town.html"
+    },
+    {
+      "label": "Palace of the Grand Master",
+      "href": "/ports/rhodes/palace.html"
+    },
+    {
+      "label": "Street of the Knights",
+      "href": "/ports/rhodes/street-of-knights.html"
+    },
+    {
+      "label": "East Coast Drive",
+      "href": "/ports/rhodes/east-coast.html"
+    },
+    {
+      "label": "Lindos Briefing",
+      "href": "/ports/rhodes/lindos.html"
+    },
+    {
+      "label": "Map & Day Plan",
+      "href": "/ports/rhodes/maps.html"
+    },
+    {
+      "label": "Photography",
+      "href": "/ports/rhodes/photography.html"
+    }
+  ],
+  "troy": [
+    {
+      "label": "Troy Overview",
+      "href": "/ports/troy/index.html"
+    },
+    {
+      "label": "Before You Go",
+      "href": "/ports/troy/before-you-go.html"
+    },
+    {
+      "label": "Site Map & Route",
+      "href": "/ports/troy/route.html"
+    },
+    {
+      "label": "Nine Cities of Troy",
+      "href": "/ports/troy/layers.html"
+    },
+    {
+      "label": "Myth vs. History",
+      "href": "/ports/troy/myth-history.html"
+    },
+    {
+      "label": "Troy Museum",
+      "href": "/ports/troy/museum.html"
+    },
+    {
+      "label": "Photography",
+      "href": "/ports/troy/photography.html"
+    },
+    {
+      "label": "Ancient World Context",
+      "href": "/ports/troy/ancient-world.html"
+    }
+  ],
+  "heraklion": [
+    {
+      "label": "Heraklion Overview",
+      "href": "/ports/heraklion/index.html"
+    },
+    {
+      "label": "Museum Field Guide",
+      "href": "/ports/heraklion/museum.html"
+    },
+    {
+      "label": "Minoan Highlights",
+      "href": "/ports/heraklion/minoan-highlights.html"
+    },
+    {
+      "label": "Harbor & Old Town",
+      "href": "/ports/heraklion/harbor.html"
+    },
+    {
+      "label": "Map & Route",
+      "href": "/ports/heraklion/maps.html"
+    }
+  ],
+  "athens": [
+    {
+      "label": "Athens Overview",
+      "href": "/ports/athens/index.html"
+    },
+    {
+      "label": "Day 1 \u00b7 Acropolis & Plaka",
+      "href": "/ports/athens/day-one.html"
+    },
+    {
+      "label": "Acropolis Field Guide",
+      "href": "/ports/athens/acropolis.html"
+    },
+    {
+      "label": "Plaka & Rest Strategy",
+      "href": "/ports/athens/plaka.html"
+    },
+    {
+      "label": "Day 2 \u00b7 Panoramic Athens",
+      "href": "/ports/athens/day-two.html"
+    },
+    {
+      "label": "Archaeological Museum",
+      "href": "/ports/athens/museum.html"
+    },
+    {
+      "label": "Maps & Routes",
+      "href": "/ports/athens/maps.html"
+    }
+  ],
+  "olympia": [
+    {
+      "label": "Olympia Overview",
+      "href": "/ports/olympia/index.html"
+    },
+    {
+      "label": "Before You Go",
+      "href": "/ports/olympia/before-you-go.html"
+    },
+    {
+      "label": "The Sanctuary",
+      "href": "/ports/olympia/sanctuary.html"
+    },
+    {
+      "label": "The Stadium",
+      "href": "/ports/olympia/stadium.html"
+    },
+    {
+      "label": "Museum Priorities",
+      "href": "/ports/olympia/museum.html"
+    },
+    {
+      "label": "Map & Route",
+      "href": "/ports/olympia/maps.html"
+    }
+  ],
+  "corfu": [
+    {
+      "label": "Corfu Overview",
+      "href": "/ports/corfu/index.html"
+    },
+    {
+      "label": "Panoramic Corfu",
+      "href": "/ports/corfu/panoramic.html"
+    },
+    {
+      "label": "Old Town Walk",
+      "href": "/ports/corfu/old-town.html"
+    },
+    {
+      "label": "Old Fortress",
+      "href": "/ports/corfu/fortress.html"
+    },
+    {
+      "label": "Map & Day Plan",
+      "href": "/ports/corfu/maps.html"
+    },
+    {
+      "label": "Photography",
+      "href": "/ports/corfu/photography.html"
+    }
+  ],
+  "kotor": [
+    {
+      "label": "Kotor Overview",
+      "href": "/ports/kotor/index.html"
+    },
+    {
+      "label": "Summer Highlights",
+      "href": "/ports/kotor/highlights.html"
+    },
+    {
+      "label": "Old Town",
+      "href": "/ports/kotor/old-town.html"
+    },
+    {
+      "label": "Map & Day Plan",
+      "href": "/ports/kotor/maps.html"
+    },
+    {
+      "label": "Photography",
+      "href": "/ports/kotor/photography.html"
+    }
+  ],
+  "dubrovnik": [
+    {
+      "label": "Dubrovnik Overview",
+      "href": "/ports/dubrovnik/index.html"
+    },
+    {
+      "label": "Dubrovnik on Foot",
+      "href": "/ports/dubrovnik/walk.html"
+    },
+    {
+      "label": "City Walls Decision",
+      "href": "/ports/dubrovnik/walls.html"
+    },
+    {
+      "label": "Map & Route",
+      "href": "/ports/dubrovnik/maps.html"
+    },
+    {
+      "label": "Photography",
+      "href": "/ports/dubrovnik/photography.html"
+    }
+  ],
+  "split": [
+    {
+      "label": "Split Overview",
+      "href": "/ports/split/index.html"
+    },
+    {
+      "label": "Split Riviera",
+      "href": "/ports/split/riviera.html"
+    },
+    {
+      "label": "Diocletian\u2019s Palace",
+      "href": "/ports/split/palace.html"
+    },
+    {
+      "label": "Map & Route",
+      "href": "/ports/split/maps.html"
+    },
+    {
+      "label": "Photography",
+      "href": "/ports/split/photography.html"
+    }
+  ],
+  "venice": [
+    {
+      "label": "Venice Overview",
+      "href": "/ports/venice/index.html"
+    },
+    {
+      "label": "St. Mark\u2019s Square",
+      "href": "/ports/venice/st-marks.html"
+    },
+    {
+      "label": "Doge\u2019s Palace",
+      "href": "/ports/venice/doges-palace.html"
+    },
+    {
+      "label": "Maps & Routes",
+      "href": "/ports/venice/maps.html"
+    },
+    {
+      "label": "Disembarkation & Hotel",
+      "href": "/ports/venice/disembarkation.html"
+    },
+    {
+      "label": "Photography",
+      "href": "/ports/venice/photography.html"
+    },
+    {
+      "label": "Northern Italy Handoff",
+      "href": "/ports/venice/handoff.html"
+    }
+  ]
+}

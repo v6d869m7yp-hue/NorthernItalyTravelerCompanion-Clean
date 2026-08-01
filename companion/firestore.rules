@@ -1,0 +1,58 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function tripDoc(tripId) { return get(/databases/$(database)/documents/trips/$(tripId)); }
+    function isMember(tripId) { return signedIn() && request.auth.uid in tripDoc(tripId).data.memberUids; }
+    function role(tripId) { return tripDoc(tripId).data.roles[request.auth.uid]; }
+    function canEdit(tripId) { return isMember(tripId) && role(tripId) in ['owner','editor']; }
+
+    match /users/{uid} {
+      allow read, create, update: if signedIn() && request.auth.uid == uid;
+      allow delete: if false;
+      match /trips/{tripId} { allow read, write: if signedIn() && request.auth.uid == uid; }
+      match /devices/{deviceId} { allow read, write: if signedIn() && request.auth.uid == uid; }
+      match /vaultLocator/{documentId} { allow read, write: if signedIn() && request.auth.uid == uid; }
+    }
+
+    match /trips/{tripId} {
+      allow create: if signedIn()
+        && request.resource.data.ownerUid == request.auth.uid
+        && request.resource.data.memberUids == [request.auth.uid]
+        && request.resource.data.roles[request.auth.uid] == 'owner';
+      allow read: if signedIn() && request.auth.uid in resource.data.memberUids;
+      allow update: if signedIn()
+        && request.auth.uid in resource.data.memberUids
+        && resource.data.roles[request.auth.uid] == 'owner';
+      allow delete: if signedIn() && resource.data.ownerUid == request.auth.uid;
+
+      match /envelopes/{envelopeId} {
+        allow read: if isMember(tripId);
+        allow create, update, delete: if canEdit(tripId);
+      }
+      match /reservations/{reservationId} {
+        allow read: if isMember(tripId);
+        allow create, update, delete: if canEdit(tripId);
+      }
+      match /documents/{documentId} {
+        allow read: if isMember(tripId);
+        allow create, update, delete: if canEdit(tripId);
+      }
+      match /journal/{entryId} {
+        allow read: if isMember(tripId);
+        allow create, update, delete: if canEdit(tripId);
+      }
+      match /activity/{entryId} {
+        allow read: if isMember(tripId);
+        allow create: if canEdit(tripId) && request.resource.data.actorUid == request.auth.uid;
+        allow update, delete: if false;
+      }
+      match /members/{uid} {
+        allow read: if isMember(tripId);
+        allow write: if false; // invitations and removals will use a trusted server function
+      }
+    }
+
+    match /{document=**} { allow read, write: if false; }
+  }
+}

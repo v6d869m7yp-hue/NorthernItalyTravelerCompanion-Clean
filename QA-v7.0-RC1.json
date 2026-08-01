@@ -1,0 +1,117 @@
+{
+  "version": "7.0 RC2",
+  "html_pages": 21,
+  "missing_local_refs": [],
+  "semantic_h1_issues": [],
+  "images_without_alt": [],
+  "unlabeled_buttons": [],
+  "stale_active_refs": [],
+  "files": {
+    "404.html": {
+      "semantic_h1": 1,
+      "images": 0,
+      "external_links": 0
+    },
+    "cinque-terre.html": {
+      "semantic_h1": 1,
+      "images": 11,
+      "external_links": 5
+    },
+    "dolomites.html": {
+      "semantic_h1": 1,
+      "images": 17,
+      "external_links": 5
+    },
+    "help.html": {
+      "semantic_h1": 1,
+      "images": 0,
+      "external_links": 0
+    },
+    "hotel-routes.html": {
+      "semantic_h1": 1,
+      "images": 0,
+      "external_links": 36
+    },
+    "hotels.html": {
+      "semantic_h1": 1,
+      "images": 0,
+      "external_links": 0
+    },
+    "index.html": {
+      "semantic_h1": 1,
+      "images": 2,
+      "external_links": 0
+    },
+    "itinerary.html": {
+      "semantic_h1": 1,
+      "images": 0,
+      "external_links": 0
+    },
+    "lake-como.html": {
+      "semantic_h1": 1,
+      "images": 8,
+      "external_links": 7
+    },
+    "lake-maggiore.html": {
+      "semantic_h1": 1,
+      "images": 5,
+      "external_links": 7
+    },
+    "map.html": {
+      "semantic_h1": 1,
+      "images": 0,
+      "external_links": 0
+    },
+    "milan.html": {
+      "semantic_h1": 1,
+      "images": 0,
+      "external_links": 3
+    },
+    "more-destinations.html": {
+      "semantic_h1": 1,
+      "images": 2,
+      "external_links": 0
+    },
+    "my-trip.html": {
+      "semantic_h1": 1,
+      "images": 0,
+      "external_links": 0
+    },
+    "piedmont.html": {
+      "semantic_h1": 1,
+      "images": 2,
+      "external_links": 0
+    },
+    "practical.html": {
+      "semantic_h1": 1,
+      "images": 0,
+      "external_links": 0
+    },
+    "readiness.html": {
+      "semantic_h1": 1,
+      "images": 0,
+      "external_links": 2
+    },
+    "reservations.html": {
+      "semantic_h1": 1,
+      "images": 0,
+      "external_links": 1
+    },
+    "today.html": {
+      "semantic_h1": 1,
+      "images": 0,
+      "external_links": 0
+    },
+    "venice.html": {
+      "semantic_h1": 1,
+      "images": 26,
+      "external_links": 12
+    },
+    "verona.html": {
+      "semantic_h1": 1,
+      "images": 1,
+      "external_links": 1
+    }
+  },
+  "status": "pass"
+}

@@ -1,0 +1,37 @@
+{
+  "hero": "../assets/img/visuals/istanbul-panorama.svg",
+  "days": [
+    {
+      "number": "01",
+      "title": "Arrival & First Evening",
+      "date": "August 14",
+      "href": "days/arrival.html",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Hagia_Sophia_-_Au%C3%9Fenansicht_im_Abendlicht.jpg/1280px-Hagia_Sophia_-_Au%C3%9Fenansicht_im_Abendlicht.jpg",
+      "summary": "A low-pressure arrival plan centered on the hotel and Sultanahmet."
+    },
+    {
+      "number": "02",
+      "title": "Imperial Old City",
+      "date": "August 15",
+      "href": "days/old-city.html",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Hagia_Sophia_-_Au%C3%9Fenansicht_im_Abendlicht.jpg/1280px-Hagia_Sophia_-_Au%C3%9Fenansicht_im_Abendlicht.jpg",
+      "summary": "The essential monuments in a route designed to minimize backtracking."
+    },
+    {
+      "number": "03",
+      "title": "Bosphorus & Waterfront",
+      "date": "August 16",
+      "href": "days/bosphorus.html",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Ortakoy.jpg",
+      "summary": "Ferries, water views, markets and neighborhoods beyond the monuments."
+    },
+    {
+      "number": "04",
+      "title": "Markets & Flexible Istanbul",
+      "date": "August 17",
+      "href": "days/markets.html",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Grand_Bazaar_%28Istanbul%29.jpg/1280px-Grand_Bazaar_%28Istanbul%29.jpg",
+      "summary": "Shopping, food and a flexible final independent day."
+    }
+  ]
+}

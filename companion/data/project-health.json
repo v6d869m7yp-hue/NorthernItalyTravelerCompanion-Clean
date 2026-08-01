@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "release": "10.0.0",
+  "baseline": "6.9.2",
+  "status": "travel-ready",
+  "components": [
+    {
+      "name": "Firebase Authentication",
+      "state": "working",
+      "verification": "Proven v6.9.2 persisted-session implementation restored unchanged"
+    },
+    {
+      "name": "Firestore Trips",
+      "state": "working",
+      "verification": "Memory cache and Safari long-polling transport prevent private-browsing IndexedDB/WebChannel stalls"
+    },
+    {
+      "name": "Cloud Reservations",
+      "state": "working",
+      "verification": "Proven active-trip reservation model restored unchanged"
+    },
+    {
+      "name": "Interactive Maps",
+      "state": "working",
+      "verification": "No map code changed from the tested baseline"
+    },
+    {
+      "name": "Travel Vault",
+      "state": "working",
+      "verification": "Encryption, backup, restore and document workflow preserved"
+    },
+    {
+      "name": "Encrypted Vault Sync",
+      "state": "working",
+      "verification": "Tested v6.9.2 sync, device registry and sync history preserved"
+    },
+    {
+      "name": "Offline App Cache",
+      "state": "working",
+      "verification": "New v7.2.3 cache identity prevents stale v7.0.x assets"
+    },
+    {
+      "name": "Whole-Trip Sync",
+      "state": "working",
+      "verification": "Canonical trip profile, itinerary and favorites synchronize through Firestore; reservations remain cloud-backed"
+    },
+    {
+      "name": "Cloud Trip Bootstrap",
+      "state": "working",
+      "verification": "Zero-trip accounts import and select the packaged itinerary"
+    },
+    {
+      "name": "Smart Timeline",
+      "state": "working",
+      "verification": "Merges curated itinerary and synchronized reservation events with offline-first rendering"
+    },
+    {
+      "name": "Daily Briefing",
+      "state": "working",
+      "verification": "Offline-first daily schedule, lodging, linked documents, countdown and device-saved checklist"
+    },
+    {
+      "name": "Production Recovery",
+      "state": "working",
+      "verification": "Global error recovery notice, diagnostics link, and device snapshot export are enabled"
+    },
+    {
+      "name": "Connectivity Awareness",
+      "state": "working",
+      "verification": "Every page reports online/offline transitions without blocking offline use"
+    }
+  ],
+  "releaseGates": [
+    "Automated build validation passes",
+    "Whole-Trip Sync audit reads the canonical trip",
+    "Favorites synchronize across devices",
+    "Cloud Reservations shows the canonical records",
+    "Vault sync regression checks pass",
+    "Production readiness checks pass on Diagnostics",
+    "Device recovery snapshot exports successfully"
+  ],
+  "milestone": "Synchronize the canonical trip, itinerary, favorites and cloud reservations across devices",
+  "label": "travel-ready"
+}

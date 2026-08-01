@@ -1,0 +1,10 @@
+NORTHERN ITALY TRAVELER’S COMPANION v8.0.0
+
+1. Replace the files in the existing Northern Italy GitHub repository with ALL files and folders from this package.
+2. Keep the companion folder intact.
+3. Commit and push the complete replacement.
+4. Open index.html through GitHub Pages.
+5. Hard-refresh once, or close and reopen the installed web app, so the v8.0.0 service worker replaces the previous cache.
+
+Recommended commit message:
+Release v8.0.0: integrate full Istanbul–Viking Companion and local journey handoffs

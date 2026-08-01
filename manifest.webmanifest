@@ -1,0 +1,19 @@
+{
+  "name": "Northern Italy Traveler’s Companion — Integrated Journey",
+  "short_name": "Italy Companion",
+  "start_url": "./index.html?v=7.0.1-september2026",
+  "display": "standalone",
+  "background_color": "#f7f2e8",
+  "theme_color": "#082d4a",
+  "icons": [
+    {
+      "src": "assets/images/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "description": "Fully offline Northern Italy itinerary, reservations, maps, destination reference and Traveler’s Emergency Pack for September 2026.",
+  "scope": "./",
+  "id": "./index.html"
+}

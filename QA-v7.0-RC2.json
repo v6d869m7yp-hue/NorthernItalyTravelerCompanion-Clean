@@ -1,0 +1,12 @@
+{
+  "release": "v7.0 RC2",
+  "focus": "Safari and iPadOS navigation-state regression",
+  "checks": [
+    "drawer initializes closed",
+    "aria-expanded controls tablet drawer visibility",
+    "pageshow and pagehide collapse restored menu state",
+    "orientation change collapses menu",
+    "link selection collapses menu",
+    "Escape collapses menu and restores focus"
+  ]
+}

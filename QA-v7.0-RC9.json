@@ -1,0 +1,12 @@
+{
+  "version": "v7.0 FINAL",
+  "scope": "Surgical offline Milan image patch from RC8",
+  "local_milan_images": [
+    "duomo-di-milano.jpg",
+    "castello-sforzesco.jpg",
+    "parco-sempione.jpg",
+    "galleria-vittorio-emanuele-ii.jpg"
+  ],
+  "remote_display_images_expected": 0,
+  "layout_changes": false
+}

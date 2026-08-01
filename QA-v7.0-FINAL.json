@@ -1,0 +1,17 @@
+{
+  "release": "v7.0 FINAL",
+  "base": "v7.0 RC9",
+  "scope": [
+    "Final homepage hero lightening",
+    "Venice illustrated overview width/brightness safeguard",
+    "Brera contrast safeguard",
+    "Production version freeze",
+    "Full offline/static regression"
+  ],
+  "status": "passed",
+  "html_pages": 21,
+  "missing_local_assets": 0,
+  "remote_display_images": 0,
+  "missing_alt_attributes": 0,
+  "bad_local_references": 0
+}

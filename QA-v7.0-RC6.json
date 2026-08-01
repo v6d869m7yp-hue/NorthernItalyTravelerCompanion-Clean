@@ -1,0 +1,13 @@
+{
+  "version": "7.0 RC6",
+  "base": "7.0 RC5",
+  "html_pages": 21,
+  "milan_landmarks": [
+    "Duomo di Milano",
+    "Castello Sforzesco",
+    "Parco Sempione",
+    "Galleria Vittorio Emanuele II"
+  ],
+  "practical_reference_contrast": "white/cream on dark navy-green",
+  "checks": {}
+}
