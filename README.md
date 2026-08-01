@@ -1,4 +1,4 @@
-# v8.0.3 update
+# v8.0.4 update
 
 Multiple reservation screenshots are supported (up to 12 files per upload).
 

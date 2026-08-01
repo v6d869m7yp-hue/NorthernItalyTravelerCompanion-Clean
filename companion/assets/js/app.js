@@ -92,7 +92,7 @@ function unifiedJourneySwitcher(){
   window.resetJourneySwitcherPosition=()=>{localStorage.removeItem(storageKey);restore();nav.classList.add('position-reset');setTimeout(()=>nav.classList.remove('position-reset'),500)};
 }
 
-const APP_RELEASE={version:'10.0.0',buildId:'v10.0.0-travel-ready'};
+const APP_RELEASE={version:'10.0.1',buildId:'v10.0.1-safari-recovery-fix'};
 let updateRegistration=null;
 let appUpdatesPromise=null;
 function showUpdateBanner(reg){
@@ -255,6 +255,16 @@ async function diagnosticsPage(){
   const ready=document.querySelector('[data-production-readiness]');
   if(ready){const localOK=(()=>{try{localStorage.setItem('ivtc.readiness.test','1');localStorage.removeItem('ivtc.readiness.test');return true}catch(e){return false}})();const checksReady=[['Critical files',results.every(x=>x[1])],['Offline worker',Boolean(reg?.active||navigator.serviceWorker?.controller)],['Local device storage',localOK],['Internet state known',typeof navigator.onLine==='boolean'],['Release metadata',String(info.version)===APP_RELEASE.version]];const passed=checksReady.filter(x=>x[1]).length;ready.innerHTML=`<div class="readiness-score"><strong>${passed}/${checksReady.length}</strong><span>${passed===checksReady.length?'Travel ready':'Needs attention'}</span></div><div class="diagnostic-checks">${checksReady.map(([label,ok])=>`<p class="diagnostic-check ${ok?'ok':'bad'}"><strong>${ok?'✓':'✕'}</strong> ${label}</p>`).join('')}</div>`;}
 
+  const runtimeTarget=document.querySelector('[data-runtime-issues]');
+  const runtimeClear=document.querySelector('[data-clear-runtime-issues]');
+  const renderRuntimeIssues=()=>{
+    if(!runtimeTarget)return;
+    let items=[];try{items=JSON.parse(localStorage.getItem('ivtc.runtimeIssues.v1')||'[]')}catch(e){}
+    runtimeTarget.innerHTML=items.length?`<div class="diagnostic-checks">${items.map(x=>`<p class="diagnostic-check bad"><strong>!</strong> ${new Date(x.time).toLocaleString()} · ${x.page}<br><small>${String(x.message||'Unknown error').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}</small></p>`).join('')}</div>`:'<p>No Companion runtime errors have been recorded on this device.</p>';
+  };
+  renderRuntimeIssues();
+  if(runtimeClear)runtimeClear.onclick=()=>{localStorage.removeItem('ivtc.runtimeIssues.v1');renderRuntimeIssues();};
+
   const healthTarget=document.querySelector('[data-project-health]');
   if(healthTarget){
     try{
@@ -304,16 +314,33 @@ function showRecoveryNotice(message){
   box.querySelector('button').onclick=()=>box.remove();
   document.body.appendChild(box);
 }
+function recordRuntimeIssue(kind,message,details={}){
+  try{
+    const key='ivtc.runtimeIssues.v1';
+    const prior=JSON.parse(localStorage.getItem(key)||'[]');
+    prior.unshift({kind,message:String(message||''),page:location.pathname,time:new Date().toISOString(),...details});
+    localStorage.setItem(key,JSON.stringify(prior.slice(0,12)));
+  }catch(e){}
+}
+function isBenignBrowserIssue(message=''){
+  return /ResizeObserver loop|Script error\.?$|AbortError|The operation was aborted|Load failed|cancelled|canceled|network|fetch|offline|NotAllowedError|user denied|The request is not allowed/i.test(String(message));
+}
 function setupGlobalRecovery(){
   window.addEventListener('error',event=>{
     const message=String(event?.message||'Unexpected page error');
-    console.error('[IVTC recovery]',message);
+    const filename=String(event?.filename||'');
+    const sameOrigin=!filename||filename.startsWith(location.origin)||filename.startsWith(location.pathname.split('/').slice(0,-1).join('/'));
+    console.error('[IVTC recovery]',message,event?.error||'');
+    if(isBenignBrowserIssue(message)||!sameOrigin)return;
+    recordRuntimeIssue('error',message,{filename,line:event?.lineno||0,column:event?.colno||0});
     showRecoveryNotice('Reload this page or use Diagnostics. Your device copy remains intact.');
   });
   window.addEventListener('unhandledrejection',event=>{
     const message=String(event?.reason?.message||event?.reason||'Unhandled request failure');
     console.error('[IVTC recovery]',message);
-    if(!/network|fetch|offline/i.test(message))showRecoveryNotice('A background task failed. Core offline information is still available.');
+    if(isBenignBrowserIssue(message))return;
+    recordRuntimeIssue('promise',message);
+    showRecoveryNotice('A Companion task failed. Diagnostics now includes the recorded error.');
   });
 }
 function downloadDeviceSnapshot(){
