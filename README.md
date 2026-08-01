@@ -1,3 +1,5 @@
+# v8.0.5 Privacy & Relink Polish
+
 # v8.0.4 update
 
 Multiple reservation screenshots are supported (up to 12 files per upload).

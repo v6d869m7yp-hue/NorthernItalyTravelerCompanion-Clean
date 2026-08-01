@@ -1,0 +1,7 @@
+v10.0.2 — Privacy Separation & Reservation Relink
+
+- Separates cloud-safe itinerary fields from encrypted reservation details.
+- Removes confirmation, payment and private-contact prompts from cloud reservation editing.
+- Clarifies shared trip documents versus encrypted private Vault storage.
+- Recovers private reservation links when cloud IDs change by matching name and travel date.
+- Preserves existing encrypted Vault records and attachments.
