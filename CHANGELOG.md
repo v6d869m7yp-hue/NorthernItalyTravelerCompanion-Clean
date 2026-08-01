@@ -189,3 +189,6 @@ Multiple reservation screenshots are supported (up to 12 files per upload).
 - Removed public-page hotel note entry and redirected private reservation details to authenticated Companion reservations.
 - Purged legacy `nitc-hotel-*` browser-local records when the Stays page opens.
 - Updated cache and release labels.
+
+## v8.1.2
+- Added one-time legacy trip membership bootstrap for Traveler Invitations.
