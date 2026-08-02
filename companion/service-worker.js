@@ -1,7 +1,7 @@
-const VERSION='10.1.7';
-const BUILD_ID='v10.1.7-vault-asset-permissions-fix';
-const CACHE='ivtc-v10.1.7-vault-asset-permissions-fix';
-const ESSENTIAL = ["./RELEASE-v10.1.7.txt","./RELEASE-v10.1.4.txt","./RELEASE-v10.1.2.txt","./RELEASE-v10.1.0.txt","./assets/js/backend/collaboration.js","./assets/js/collaboration-ui.js","./RELEASE-v10.0.2.txt","./RELEASE-v9.9.5.txt","./daily-briefing.html", "./journal.html", "./assets/js/journal.js", "./assets/js/backend/journal-model.js", "./assets/js/daily-briefing.js", "./index.html", "./diagnostics.html", "./documents.html", "./trip-binder.html", "./traveler-assistant.html", "./trip-map.html", "./assets/js/trip-map.js", "./assets/js/traveler-assistant.js", "./assets/js/trip-binder.js", "./assets/css/app.css", "./assets/js/app.js", "./assets/js/smart-timeline.js", "./assets/js/dashboard.js", "./assets/js/core/runtime.js", "./manifest.webmanifest", "./data/build-info.json", "./data/project-health.json", "./data/trip.json", "./data/navigation.json"];
+const VERSION='10.1.8';
+const BUILD_ID='v10.1.8-vault-attachment-editor-fix';
+const CACHE='ivtc-v10.1.8-vault-attachment-editor-fix';
+const ESSENTIAL = ["./RELEASE-v10.1.8.txt","./RELEASE-v10.1.4.txt","./RELEASE-v10.1.2.txt","./RELEASE-v10.1.0.txt","./assets/js/backend/collaboration.js","./assets/js/collaboration-ui.js","./RELEASE-v10.0.2.txt","./RELEASE-v9.9.5.txt","./daily-briefing.html", "./journal.html", "./assets/js/journal.js", "./assets/js/backend/journal-model.js", "./assets/js/daily-briefing.js", "./index.html", "./diagnostics.html", "./documents.html", "./trip-binder.html", "./traveler-assistant.html", "./trip-map.html", "./assets/js/trip-map.js", "./assets/js/traveler-assistant.js", "./assets/js/trip-binder.js", "./assets/css/app.css", "./assets/js/app.js", "./assets/js/smart-timeline.js", "./assets/js/dashboard.js", "./assets/js/core/runtime.js", "./manifest.webmanifest", "./data/build-info.json", "./data/project-health.json", "./data/trip.json", "./data/navigation.json"];
 const OPTIONAL = [
   "./RELEASE-v6.8.4.txt",
   "./docs/PROJECT-ROADMAP.md",
