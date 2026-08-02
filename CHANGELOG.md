@@ -202,3 +202,8 @@ Multiple reservation screenshots are supported (up to 12 files per upload).
 
 - Fixed Firestore authorization for owner invitation-history queries by filtering on both trip ID and inviter UID.
 - Bumped Companion runtime and cache metadata to v10.1.4.
+
+
+## v8.1.7 — Vault Large Image Fix
+- Fixed Safari stack overflow during image encryption.
+- Added on-device image compression and clearer secure-storage errors.
