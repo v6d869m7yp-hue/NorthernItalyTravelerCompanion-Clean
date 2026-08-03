@@ -12,7 +12,7 @@ const enc=new TextEncoder(),dec=new TextDecoder();
 let masterKey=null,data=null,lockTimer=null;
 let cloudReservations=[],cloudReservationMeta={status:'loading'},cloudReservationUnsub=null,activePanel='documents';
 let cloudSync={state:'idle',message:'Sign in and choose an active trip to enable encrypted sync.',lastAt:null,remoteRevision:null,stages:[],detail:''};
-const APP_VERSION='8.2.7';
+const APP_VERSION='8.2.0';
 let cloudRestore={state:'checking',message:'Checking your Firebase account for an existing encrypted Vault…',candidate:null,candidates:[]};
 let cloudSyncTimer=null,cloudSyncBusy=false,cloudSyncRun=0;
 const qs=(s,r=HOST)=>r.querySelector(s),qsa=(s,r=HOST)=>[...r.querySelectorAll(s)];
@@ -44,11 +44,11 @@ async function open(key,box,aad='ivtc-vault',raw=false){
  return raw?new Uint8Array(plain):JSON.parse(dec.decode(plain));
 }
 async function exportRawKey(key){return new Uint8Array(await crypto.subtle.exportKey('raw',key))}
-function defaultData(owner){return {schema:3,revision:0,sync:{remoteRevision:-1,lastSyncedAt:null,history:[]},backup:{lastExportAt:null,lastExportRevision:-1},createdAt:now(),updatedAt:now(),travelers:[{id:crypto.randomUUID(),name:owner||'Traveler 1',role:'Owner'}],records:[],documents:[],settings:{autoLockMinutes:15},audit:[],devices:[{id:deviceId,name:deviceName(),addedAt:now(),lastSeen:now()}],outbox:[]}}
+function defaultData(owner){return {schema:3,revision:0,sync:{remoteRevision:-1,lastSyncedAt:null,history:[]},backup:{lastExportAt:null,lastExportRevision:-1},createdAt:now(),updatedAt:now(),travelers:[{id:crypto.randomUUID(),name:owner||'Traveler 1',role:'Owner'}],records:[],documents:[],settings:{autoLockMinutes:30},audit:[],devices:[{id:deviceId,name:deviceName(),addedAt:now(),lastSeen:now()}],outbox:[]}}
 function deviceClass(){const ua=navigator.userAgent||'';const platform=navigator.platform||'';const touchPoints=Number(navigator.maxTouchPoints||0);const shortSide=Math.min(Number(screen?.width||0),Number(screen?.height||0));if(/iPhone|iPod/i.test(ua))return 'iphone';if(/iPad/i.test(ua))return 'ipad';if((platform==='MacIntel'||/Macintosh/i.test(ua))&&touchPoints>1)return shortSide&&shortSide<600?'iphone':'ipad';if(/Macintosh|MacIntel/i.test(ua))return 'mac';return 'apple';}
 function deviceName(){const kind={iphone:'iPhone',ipad:'iPad',mac:'Mac',apple:'Apple device'}[deviceClass()]||'Apple device';return `${kind} · Safari`}
 function classFromDeviceName(name){const n=String(name||'').toLowerCase();return n.startsWith('iphone')?'iphone':n.startsWith('ipad')?'ipad':n.startsWith('mac')?'mac':'apple'}
-function normalizeData(){data.schema=3;data.revision=Number(data.revision||0);data.sync=data.sync||{remoteRevision:-1,lastSyncedAt:null,history:[]};data.sync.history=data.sync.history||[];data.backup=data.backup||{lastExportAt:null,lastExportRevision:-1};data.travelers=data.travelers||[];data.records=data.records||[];data.documents=data.documents||[];data.audit=data.audit||[];data.settings=data.settings||{autoLockMinutes:15};data.devices=data.devices||[];data.outbox=data.outbox||[];const detectedClass=deviceClass();const storedClass=localStorage.getItem(DEVICE_CLASS_KEY);let d=data.devices.find(x=>x.id===deviceId);const inheritedMismatch=(storedClass&&storedClass!==detectedClass)||(d&&classFromDeviceName(d.name)!==detectedClass&&classFromDeviceName(d.name)!=='apple');if(inheritedMismatch){deviceId=crypto.randomUUID();localStorage.setItem(DEVICE_KEY,deviceId);d=null}localStorage.setItem(DEVICE_CLASS_KEY,detectedClass);if(!d){d={id:deviceId,name:deviceName(),addedAt:now(),lastSeen:now(),lastSyncedAt:null,syncCount:0,appVersion:APP_VERSION};data.devices.push(d)}d.name=deviceName();d.lastSeen=now();d.appVersion=APP_VERSION;for(const r of data.records){r.attachments=r.attachments||[];r.status=r.status||'confirmed';r.updatedAt=r.updatedAt||data.updatedAt}}
+function normalizeData(){data.schema=3;data.revision=Number(data.revision||0);data.sync=data.sync||{remoteRevision:-1,lastSyncedAt:null,history:[]};data.sync.history=data.sync.history||[];data.backup=data.backup||{lastExportAt:null,lastExportRevision:-1};data.travelers=data.travelers||[];data.records=data.records||[];data.documents=data.documents||[];data.audit=data.audit||[];data.settings=data.settings||{autoLockMinutes:30};if(data.settings.autoLockMinutes==null)data.settings.autoLockMinutes=30;data.devices=data.devices||[];data.outbox=data.outbox||[];const detectedClass=deviceClass();const storedClass=localStorage.getItem(DEVICE_CLASS_KEY);let d=data.devices.find(x=>x.id===deviceId);const inheritedMismatch=(storedClass&&storedClass!==detectedClass)||(d&&classFromDeviceName(d.name)!==detectedClass&&classFromDeviceName(d.name)!=='apple');if(inheritedMismatch){deviceId=crypto.randomUUID();localStorage.setItem(DEVICE_KEY,deviceId);d=null}localStorage.setItem(DEVICE_CLASS_KEY,detectedClass);if(!d){d={id:deviceId,name:deviceName(),addedAt:now(),lastSeen:now(),lastSyncedAt:null,syncCount:0,appVersion:APP_VERSION};data.devices.push(d)}d.name=deviceName();d.lastSeen=now();d.appVersion=APP_VERSION;for(const r of data.records){r.attachments=r.attachments||[];r.status=r.status||'confirmed';r.updatedAt=r.updatedAt||data.updatedAt}}
 
 function currentDevice(){return data?.devices?.find(x=>x.id===deviceId)}
 function addSyncHistory(direction,status,note='',bytes=0){
@@ -220,7 +220,7 @@ async function pullCloudNow(){
  catch(e){if(run!==cloudSyncRun)return;const message=e?.message||'Could not download the encrypted Vault.';const idx=(cloudSync.stages||[]).findIndex(x=>x.state==='active');if(idx>=0)setSyncStage(idx,'error',message);cloudSync={...cloudSync,state:'error',message:'Encrypted Vault download stopped safely.',detail:message,lastAt:now()}}
  finally{if(run===cloudSyncRun){cloudSyncBusy=false;renderUnlocked()}}
 }
-function scheduleLock(){clearTimeout(lockTimer);if(!data)return;const mins=Number(data.settings?.autoLockMinutes??15);if(mins>0)lockTimer=setTimeout(lock,mins*60000)}
+function scheduleLock(){clearTimeout(lockTimer);if(!data)return;const mins=Number(data.settings?.autoLockMinutes??30);if(mins>0)lockTimer=setTimeout(lock,mins*60000)}
 function lock(){cloudReservationUnsub?.();cloudReservationUnsub=null;masterKey=null;data=null;clearTimeout(lockTimer);renderLocked()}
 function statusBadge(){return `<span class="vault-status secure">● Encrypted offline</span>`}
 function renderSetup(message=''){
@@ -414,7 +414,7 @@ function bindUnlocked(){
  window.IVTC.collaborationUI?.render?.();
  qs('#vault-sync-now')?.addEventListener('click',()=>cloudSyncNow('manual'));qs('#vault-pull-now')?.addEventListener('click',pullCloudNow);qs('#vault-cancel-sync')?.addEventListener('click',cancelCloudSync);
  qs('#vault-change-password')?.addEventListener('click',changePassword);qs('#vault-enable-biometric')?.addEventListener('click',enableBiometric);qs('#vault-disable-biometric')?.addEventListener('click',disableBiometric);qs('#vault-export-changes')?.addEventListener('click',exportChanges);qs('#vault-import-changes')?.addEventListener('click',()=>qs('#vault-import-changes-file').click());qs('#vault-import-changes-file')?.addEventListener('change',importChanges);qs('#vault-delete-all')?.addEventListener('click',deleteVault);
- ['pointerdown','keydown','touchstart'].forEach(evt=>document.addEventListener(evt,scheduleLock,{passive:true,once:true}));
+ let lastActivityReset=0;const resetVaultInactivity=()=>{const t=Date.now();if(t-lastActivityReset<1000)return;lastActivityReset=t;scheduleLock()};['pointerdown','keydown','touchstart','scroll'].forEach(evt=>document.addEventListener(evt,resetVaultInactivity,{passive:true}));
 }
 
 async function editCloudPrivate(cloudId){
@@ -482,6 +482,6 @@ async function enableBiometric(){
 async function unlockBiometric(){try{const store=loadStore(),b=store.biometric,assertion=await navigator.credentials.get({publicKey:{challenge:random(32),rpId:location.hostname,allowCredentials:[{type:'public-key',id:unb64(b.credentialId)}],userVerification:'required',timeout:60000,extensions:{prf:{eval:{first:unb64(b.prfSalt)}}}}});const out=assertion.getClientExtensionResults().prf?.results?.first;if(!out)throw new Error();const bioKey=await importAes(new Uint8Array(out)),raw=await open(bioKey,b.masterWrap,'ivtc-biometric-master-v1',true);masterKey=await importAes(raw);data=await open(masterKey,store.vault,'ivtc-vault-data-v1');normalizeData();recordAudit('Vault unlocked biometrically');await persist({skipCloud:true});startCloudReservations();cloudSyncNow('unlock')}catch{renderLocked('Biometric unlock was unavailable or canceled. Use the vault password.')}}
 async function disableBiometric(){if(!confirm('Disable biometric unlock for this device?'))return;const store=loadStore();delete store.biometric;saveStore(store);recordAudit('Biometric unlock disabled');await persist();qs('[data-vault-panel="security"]')?.click()}
 function deleteVault(){if(!confirm('Permanently delete the encrypted Travel Vault from this browser?'))return;if(!confirm('This cannot be undone without an exported backup. Delete it now?'))return;localStorage.removeItem(STORAGE);masterKey=null;data=null;renderSetup('The local vault was deleted.')}
-window.addEventListener('pagehide',()=>{masterKey=null;data=null});document.addEventListener('visibilitychange',()=>{if(document.hidden&&data?.settings?.autoLockMinutes===1)scheduleLock()});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&data)scheduleLock()});
 if(loadStore())renderLocked();else{renderSetup();setTimeout(discoverCloudVault,250);}
 })();

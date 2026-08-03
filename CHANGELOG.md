@@ -1,6 +1,10 @@
+## v8.2.0
+- Unified all active build labels under v8.2.0.
+- Corrected Vault inactivity handling on Safari/iPadOS.
+
 > Current release: v8.1.1 — Update Metadata Repair
 
-# v8.0.5 Privacy & Relink Polish
+# v8.2.0 Privacy & Relink Polish
 
 # v8.0.4 update
 

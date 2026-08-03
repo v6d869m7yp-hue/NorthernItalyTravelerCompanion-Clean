@@ -1,6 +1,10 @@
-> Current release: v8.1.1 — Update Metadata Repair
+# v8.2.0 Unified Release & Vault Session
 
-# v8.0.5 Privacy & Relink Polish
+One version number now identifies the complete journey application. The encrypted Vault remains unlocked during active use and locks after inactivity.
+
+> Current release: v8.2.0 — Unified Release & Vault Session
+
+# v8.2.0 Privacy & Relink Polish
 
 # v8.0.4 update
 

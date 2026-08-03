@@ -1,5 +1,5 @@
 {
-  "name": "Istanbul · Viking Travel Companion with Travel Vault",
+  "name": "Northern Italy Traveler’s Companion with Travel Vault",
   "short_name": "Travel Companion",
   "start_url": "./index.html",
   "display": "standalone",
@@ -13,6 +13,6 @@
       "purpose": "any maskable"
     }
   ],
-  "version": "10.0.0",
+  "version": "8.2.0",
   "description": "Travel-ready offline companion with Daily Briefing, Smart Maps, reservations, documents, Trip Binder, Traveler Assistant, encrypted Vault, journal and recovery tools."
 }
