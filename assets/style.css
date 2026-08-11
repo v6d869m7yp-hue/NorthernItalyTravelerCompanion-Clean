@@ -3178,8 +3178,14 @@ body[data-destination="lake-maggiore"] #stay>img{width:100%!important;height:100
 
 .back-to-top{position:fixed;right:max(22px,env(safe-area-inset-right));bottom:112px;z-index:920;min-width:58px;min-height:44px;padding:8px 12px;border:1px solid rgba(198,154,61,.65);border-radius:999px;background:rgba(16,43,66,.96);color:#fff;font:inherit;font-weight:800;box-shadow:0 8px 24px rgba(0,0,0,.22);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .18s ease,transform .18s ease,visibility .18s;cursor:pointer}.back-to-top.visible{opacity:1;visibility:visible;transform:none}.back-to-top:focus-visible{outline:3px solid #fff;outline-offset:2px}@media(min-width:900px){.back-to-top{right:24px;bottom:190px}}@media(max-width:620px){.back-to-top{right:14px;bottom:104px}}
 
-/* v11.0.2 — unified Trip Hub navigation */
+/* v11.0.3 — unified Trip Hub navigation */
 .companion-tools-footer{max-width:1180px;margin:28px auto 88px;padding:0 18px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
 .companion-tools-footer a{display:flex;flex-direction:column;gap:3px;padding:12px 13px;border:1px solid rgba(18,59,74,.16);border-radius:12px;background:#fff;color:#123b4a;text-decoration:none;box-shadow:0 5px 18px rgba(18,59,74,.06)}
 .companion-tools-footer strong{font-size:.9rem}.companion-tools-footer span{font-size:.72rem;opacity:.72}
 @media(max-width:760px){.companion-tools-footer{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:100px}.companion-tools-footer a:first-child{grid-column:1/-1}}
+
+/* v11.0.3 universal traveler tools */
+.travel-dock.universal-tools-dock{position:fixed!important;display:flex!important;flex-direction:column!important;left:auto!important;right:max(12px,env(safe-area-inset-right))!important;top:50%!important;bottom:auto!important;transform:translateY(-50%)!important;width:112px!important;z-index:4900!important;background:#153b59!important;border:3px solid rgba(255,255,255,.18)!important;border-radius:24px!important;padding:8px!important;box-shadow:0 14px 38px rgba(0,0,0,.25)!important;overflow:hidden!important}
+.travel-dock.universal-tools-dock a{display:grid!important;place-items:center!important;min-height:58px!important;padding:7px!important;color:#fff!important;text-decoration:none!important;font-weight:800!important;border-radius:15px!important}
+.travel-dock.universal-tools-dock a:hover,.travel-dock.universal-tools-dock a:focus-visible{background:rgba(255,255,255,.14)!important;outline:2px solid #fff!important}
+@media(max-width:760px){.travel-dock.universal-tools-dock{width:94px!important;right:6px!important}.travel-dock.universal-tools-dock a{min-height:50px!important;font-size:.78rem!important}}

@@ -1,7 +1,7 @@
-const VERSION='11.0.2';
-const BUILD_ID='v11.0.2-unified-journey-release';
-const CACHE='travel-companion-v11.0.2-unified-journey-release';
-const ESSENTIAL = ["./RELEASE-v11.0.2.txt","./assets/js/backend/collaboration.js","./assets/js/collaboration-ui.js","./daily-briefing.html", "./journal.html", "./assets/js/journal.js", "./assets/js/backend/journal-model.js", "./assets/js/daily-briefing.js", "./index.html", "./diagnostics.html", "./documents.html", "./trip-binder.html", "./traveler-assistant.html", "./trip-map.html", "./assets/js/trip-map.js", "./assets/js/traveler-assistant.js", "./assets/js/trip-binder.js", "./assets/css/app.css", "./assets/js/app.js", "./assets/js/smart-timeline.js", "./assets/js/dashboard.js", "./assets/js/core/runtime.js", "./manifest.webmanifest", "./data/build-info.json", "./data/project-health.json", "./data/trip.json", "./data/navigation.json"];
+const VERSION='11.0.3';
+const BUILD_ID='v11.0.3-unified-journey-release';
+const CACHE='travel-companion-v11.0.3-unified-journey-release';
+const ESSENTIAL = ["./RELEASE-v11.0.3.txt","./assets/js/backend/collaboration.js","./assets/js/collaboration-ui.js","./daily-briefing.html", "./journal.html", "./assets/js/journal.js", "./assets/js/backend/journal-model.js", "./assets/js/daily-briefing.js", "./index.html", "./diagnostics.html", "./documents.html", "./trip-binder.html", "./traveler-assistant.html", "./trip-map.html", "./assets/js/trip-map.js", "./assets/js/traveler-assistant.js", "./assets/js/trip-binder.js", "./assets/css/app.css", "./assets/js/app.js", "./assets/js/smart-timeline.js", "./assets/js/dashboard.js", "./assets/js/core/runtime.js", "./manifest.webmanifest", "./data/build-info.json", "./data/project-health.json", "./data/trip.json", "./data/navigation.json"];
 const OPTIONAL = [
   "./RELEASE-v6.8.4.txt",
   "./docs/PROJECT-ROADMAP.md",

@@ -1,4 +1,4 @@
-# The Traveler’s Companion v11.0.2
+# The Traveler’s Companion v11.0.3
 
 Navigation consistency release.
 
@@ -8,4 +8,4 @@ Navigation consistency release.
 - Adds Trip Hub and Today to the shared Companion footer.
 - Adds a consistent traveler-tools footer across Northern Italy pages: Trip Hub, Today, Map, Stays, More.
 - “More” opens Trip Hub directly at Quick Actions / “What do you need?”.
-- Normalizes release/cache references to v11.0.2.
+- Normalizes release/cache references to v11.0.3.

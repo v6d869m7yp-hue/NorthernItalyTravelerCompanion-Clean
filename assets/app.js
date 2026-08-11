@@ -129,9 +129,16 @@
     const journeyNav = document.createElement('nav');
     journeyNav.className = 'journey-switcher';
     journeyNav.setAttribute('aria-label', 'Switch journey companion');
-    journeyNav.innerHTML = `<a href="companion/istanbul/index.html">Istanbul</a><a href="companion/ports/venice/index.html">Cruise: Venice</a><a class="primary" href="companion/index.html">Trip Hub →</a>`;
+    journeyNav.innerHTML = `<a href="companion/istanbul/index.html">Istanbul</a><a href="companion/cruise/index.html">Cruise</a><a href="venice.html">Venice</a><a class="primary" href="index.html">Northern Italy</a>`;
     document.body.appendChild(journeyNav);
   }
+
+  document.querySelectorAll('.travel-dock').forEach(d=>d.remove());
+  const utilityDock=document.createElement('nav');
+  utilityDock.className='travel-dock universal-tools-dock';
+  utilityDock.setAttribute('aria-label','Traveler tools');
+  utilityDock.innerHTML=`<a href="companion/index.html"><strong>Trip Hub</strong></a><a href="today.html">Today</a><a href="map.html">Map</a><a href="hotels.html">Stays</a><a href="companion/index.html#dashboard-quick">More</a>`;
+  document.body.appendChild(utilityDock);
 
   if (!document.querySelector('.back-to-top')) {
     const topButton=document.createElement('button');

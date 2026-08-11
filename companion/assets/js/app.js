@@ -35,7 +35,7 @@ function unifiedJourneySwitcher(){
   nav.className='journey-switcher';
   nav.setAttribute('aria-label','Switch journey companion');
   nav.setAttribute('data-draggable-navigation','');
-  nav.innerHTML=`<span class="journey-drag-handle" aria-hidden="true">⋮⋮</span><a href="${abs('/istanbul/index.html')}">Istanbul</a><a href="${northernItalyVenice}" class="primary">Continue: Venice & Northern Italy →</a>`;
+  nav.innerHTML=`<span class="journey-drag-handle" aria-hidden="true">⋮⋮</span><a href="${abs('/istanbul/index.html')}">Istanbul</a><a href="${abs('/cruise/index.html')}">Cruise</a><a href="${northernItalyVenice}">Venice</a><a href="${abs('/../index.html')}" class="primary">Northern Italy</a>`;
   document.body.appendChild(nav);
 
   const storageKey='ivtc-journey-switcher-position-v1';
@@ -92,7 +92,7 @@ function unifiedJourneySwitcher(){
   window.resetJourneySwitcherPosition=()=>{localStorage.removeItem(storageKey);restore();nav.classList.add('position-reset');setTimeout(()=>nav.classList.remove('position-reset'),500)};
 }
 
-const APP_RELEASE={version:'11.0.2',buildId:'v11.0.2-unified-journey-release'};
+const APP_RELEASE={version:'11.0.3',buildId:'v11.0.3-unified-journey-release'};
 let updateRegistration=null;
 let appUpdatesPromise=null;
 function showUpdateBanner(reg){
@@ -365,7 +365,7 @@ function setTravelMode(enabled){
     button.setAttribute('aria-pressed',String(enabled));
     button.title=enabled?'Switch to planning mode':'Switch to travel mode';
     const label=button.querySelector('[data-travel-mode-label]');
-    if(label)label.textContent=enabled?'Travel mode on':'Travel mode';
+    if(label)label.textContent=enabled?'Planning mode':'Trip mode';
   });
   document.querySelectorAll('[data-travel-mode-status]').forEach(el=>el.textContent=enabled?'Travel mode is on':'Planning mode is on');
   window.dispatchEvent(new CustomEvent('ivtc:travel-mode',{detail:{enabled}}));
@@ -385,9 +385,9 @@ function setupTravelMode(){
   }
   if(!document.querySelector('.travel-dock')){
     const dock=document.createElement('nav');
-    dock.className='travel-dock';
-    dock.setAttribute('aria-label','Travel mode shortcuts');
-    dock.innerHTML=`<a href="${abs('/index.html')}"><span>⌂</span>Trip Hub</a><a href="${abs('/daily-briefing.html')}"><span>☀</span>Today</a><a href="${abs('/trip-map.html')}"><span>⌖</span>Map</a><a href="${abs('/documents.html')}"><span>▤</span>Docs</a><a href="${abs('/traveler-assistant.html')}"><span>✦</span>Ask</a>`;
+    dock.className='travel-dock universal-tools-dock';
+    dock.setAttribute('aria-label','Traveler tools');
+    dock.innerHTML=`<button type="button" data-travel-mode-toggle class="dock-mode"><span aria-hidden="true">✈</span><strong data-travel-mode-label>Trip mode</strong></button><a href="${abs('/index.html')}"><span>⌂</span>Trip Hub</a><a href="${abs('/daily-briefing.html')}"><span>☀</span>Today</a><a href="${abs('/trip-map.html')}"><span>⌖</span>Map</a><a href="${abs('/reservations.html')}"><span>▰</span>Stays</a><a href="${abs('/index.html#dashboard-quick')}"><span>•••</span>More</a>`;
     document.body.appendChild(dock);
   }
   let skip=document.querySelector('.skip-link');
