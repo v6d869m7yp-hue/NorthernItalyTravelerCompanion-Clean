@@ -92,7 +92,7 @@ function unifiedJourneySwitcher(){
   window.resetJourneySwitcherPosition=()=>{localStorage.removeItem(storageKey);restore();nav.classList.add('position-reset');setTimeout(()=>nav.classList.remove('position-reset'),500)};
 }
 
-const APP_RELEASE={version:'11.0.3',buildId:'v11.0.3-unified-journey-release'};
+const APP_RELEASE={version:'11.0.4',buildId:'v11.0.4-unified-journey-release'};
 let updateRegistration=null;
 let appUpdatesPromise=null;
 function showUpdateBanner(reg){
@@ -398,7 +398,16 @@ function setupTravelMode(){
   document.querySelectorAll('[data-travel-mode-toggle]').forEach(button=>{
     if(button.dataset.travelModeBound)return;
     button.dataset.travelModeBound='true';
-    button.addEventListener('click',()=>setTravelMode(!isTravelMode()));
+    button.addEventListener('click',()=>{
+      const next=!isTravelMode();
+      setTravelMode(next);
+      // Trip Mode is an actual focused travel workspace, not just a label/theme.
+      // Entering it opens Today; returning to Planning Mode opens Trip Hub.
+      const target=next?abs('/daily-briefing.html'):abs('/index.html');
+      const here=(location.pathname.split('/').pop()||'index.html');
+      const targetPage=target.split('/').pop();
+      if(here!==targetPage) location.href=target;
+    });
   });
   setTravelMode(enabled);
 }

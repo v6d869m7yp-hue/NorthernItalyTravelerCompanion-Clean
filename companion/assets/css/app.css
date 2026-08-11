@@ -293,7 +293,7 @@ html.travel-mode{font-size:17px}body.travel-mode{padding-bottom:5.4rem}html.trav
 
 .back-to-top{position:fixed;right:max(22px,env(safe-area-inset-right));bottom:112px;z-index:880;min-width:58px;min-height:44px;padding:8px 12px;border:1px solid rgba(220,180,92,.65);border-radius:999px;background:rgba(13,43,67,.96);color:#fff;font:inherit;font-weight:800;box-shadow:0 8px 24px rgba(0,0,0,.22);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .18s ease,transform .18s ease,visibility .18s;cursor:pointer}.back-to-top.visible{opacity:1;visibility:visible;transform:none}.back-to-top:focus-visible{outline:3px solid #fff;outline-offset:2px}@media(min-width:900px){.back-to-top{right:26px;bottom:190px}}@media(max-width:620px){.back-to-top{right:14px;bottom:104px}}
 
-/* v11.0.3 universal traveler tools */
+/* v11.0.4 universal traveler tools */
 .travel-dock.universal-tools-dock{position:fixed;display:flex;flex-direction:column;right:max(12px,env(safe-area-inset-right));top:50%;transform:translateY(-50%);width:118px;z-index:4900;border:2px solid rgba(255,255,255,.2);border-radius:24px;background:rgba(13,43,67,.97);box-shadow:0 14px 38px rgba(0,0,0,.28);overflow:hidden;padding:8px}
 .travel-dock.universal-tools-dock a,.travel-dock.universal-tools-dock button{display:grid;place-items:center;gap:2px;min-height:58px;padding:8px 5px;border:0;background:transparent;color:#fff;text-decoration:none;font:inherit;font-weight:750;cursor:pointer;border-radius:16px}
 .travel-dock.universal-tools-dock button.dock-mode{background:#fff;color:#0d2b43;min-height:76px}

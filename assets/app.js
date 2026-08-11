@@ -140,6 +140,18 @@
   utilityDock.innerHTML=`<a href="companion/index.html"><strong>Trip Hub</strong></a><a href="today.html">Today</a><a href="map.html">Map</a><a href="hotels.html">Stays</a><a href="companion/index.html#dashboard-quick">More</a>`;
   document.body.appendChild(utilityDock);
 
+  // v11.0.4 — use the same full Companion footer on Northern Italy/Venice pages.
+  document.querySelectorAll('.companion-tools-footer').forEach(el=>el.remove());
+  if(!document.querySelector('.unified-main-footer')){
+    const mainFooter=document.createElement('footer');
+    mainFooter.className='unified-main-footer';
+    mainFooter.setAttribute('aria-label','Traveler’s Companion main menu');
+    mainFooter.innerHTML=`<div class="unified-main-footer-inner"><div class="unified-footer-brand"><strong>The Traveler’s Companion</strong><span>August–September 2026 · v11.0.4</span></div><nav class="unified-footer-links"><a href="companion/index.html">Trip Hub</a><a href="companion/daily-briefing.html">Today</a><a href="companion/traveler-assistant.html">Traveler Assistant</a><a href="companion/trip-map.html">Trip Map</a><a href="companion/trip-binder.html">Trip Binder</a><a href="companion/trip-at-a-glance.html">Trip at a Glance</a><a href="companion/favorites.html">Favorites</a><a href="companion/reservations.html">Reservations</a><a href="companion/documents.html">Documents</a><a href="companion/journal.html">Journal</a><a href="companion/vault.html">Travel Vault</a><a href="companion/my-trips.html">My Trips</a><a href="companion/trip-sync.html">Trip Sync</a><a href="companion/diagnostics.html">Diagnostics</a></nav></div>`;
+    const existingFooter=[...document.querySelectorAll('body > footer')].pop();
+    if(existingFooter) existingFooter.insertAdjacentElement('beforebegin',mainFooter);
+    else document.body.appendChild(mainFooter);
+  }
+
   if (!document.querySelector('.back-to-top')) {
     const topButton=document.createElement('button');
     topButton.type='button'; topButton.className='back-to-top'; topButton.setAttribute('aria-label','Back to top'); topButton.textContent='↑ Top';
