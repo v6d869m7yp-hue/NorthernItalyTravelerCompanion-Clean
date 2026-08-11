@@ -1,12 +1,12 @@
 {
-  "appName": "Northern Italy Traveler’s Companion",
-  "version": "8.2.0",
-  "buildId": "v8.2.0-unified-release-vault-session",
-  "buildDate": "2026-08-02",
-  "cacheName": "nitc-v8.2.0-unified-release-vault-session",
-  "release": "8.2.0",
+  "appName": "The Traveler’s Companion",
+  "version": "11.0.0",
+  "buildId": "v11.0.0-unified-journey-release",
+  "buildDate": "2026-08-11",
+  "cacheName": "travel-companion-v11.0.0-unified-journey-release",
+  "release": "11.0.0",
   "pageCount": 113,
   "mapAssetCount": 27,
   "mapGuideLinkCount": 92,
-  "label": "travel-ready"
+  "label": "unified-journey"
 }

@@ -1,5 +1,5 @@
 {
-  "name": "Northern Italy Traveler’s Companion with Travel Vault",
+  "name": "The Traveler’s Companion with Travel Vault",
   "short_name": "Travel Companion",
   "start_url": "./index.html",
   "display": "standalone",
@@ -13,6 +13,6 @@
       "purpose": "any maskable"
     }
   ],
-  "version": "8.2.0",
-  "description": "Travel-ready offline companion with Daily Briefing, Smart Maps, reservations, documents, Trip Binder, Traveler Assistant, encrypted Vault, journal and recovery tools."
+  "version": "11.0.0",
+  "description": "Unified offline travel companion for Istanbul, Viking Ancient Adriatic Treasures, and Northern Italy, with reservations, maps, documents, Trip Binder, Traveler Assistant, encrypted Vault, journal and recovery tools."
 }

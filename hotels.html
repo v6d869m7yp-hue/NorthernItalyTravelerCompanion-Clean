@@ -2,7 +2,7 @@
 
 <html lang="en"><head>
 <meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<link href="assets/style.css?v=8.2.0" rel="stylesheet"/><meta content="#082d4a" name="theme-color"/>
+<link href="assets/style.css?v=11.0.0" rel="stylesheet"/><meta content="#082d4a" name="theme-color"/>
 <title>Hotels · Northern Italy</title>
 <meta content="Hotels · Northern Italy. Personalized September 2026 Northern Italy itinerary, reservations, maps and practical travel guidance." name="description"/><meta content="light" name="color-scheme"/></head>
 <body>
@@ -30,14 +30,14 @@
 <div class="callout"><h3>Private reservation details belong in Companion</h3><p>This public stays page contains general planning guidance only. Store confirmation numbers, access instructions, host contacts and other traveler-specific details in the signed-in Companion reservation area.</p><p><a class="action" href="companion/reservations.html">Open secure reservations →</a></p></div>
 </main>
 <div class="bottomnav"><a href="index.html">Home</a><a href="itinerary.html">Plan</a><a href="map.html">Map</a><a href="hotels.html">Hotels</a></div>
-<footer>Northern Italy Traveler’s Companion · September 2026 Edition · v8.2.0</footer>
+<footer>The Traveler’s Companion · August–September 2026 · v11.0.0</footer>
 <script>
 const stops=[
-  {key:'ship',title:'Viking ship · Marghera',place:'Venice lagoon',dates:'Aug 31–Sept 1',status:'Confirmed cruise stay',checkin:'On board',checkout:'Sept 1 disembarkation',source:'',guide:'venice.html',maps:'https://maps.apple.com/?q=Marghera+Venice',arrival:'Confirm the Marghera/Fusina transfer sequence and luggage instructions before the final cruise evening.',essentials:'Keep disembarkation documents, water-taxi alternatives and the Hotel Al Sotoportego address available offline.',departure:'Leave the ship with Venice hotel directions and a clearly separated day bag.'},
-  {key:'venice',title:'Hotel Al Sotoportego',place:'Cannaregio · Venice',dates:'Sept 1–3',status:'Verified reservation',checkin:'From 3:00 PM',checkout:'11:00 AM',source:'',guide:'venice.html',maps:'https://maps.apple.com/?q=Hotel+Al+Sotoportego+Venice',arrival:'Use the nearest practical vaporetto stop and expect bridges or steps between the dock and hotel.',essentials:'Save the hotel phone number, vaporetto route, nearby pharmacy and first-night dinner options before leaving Wi-Fi.',departure:'Confirm the route to the rental-car or rail connection and allow time for luggage over bridges.'},
+  {key:'ship',title:'Viking cruise · Marghera → Fusina',place:'Venice lagoon',dates:'Aug 31–Sept 1',status:'Confirmed cruise stay',checkin:'Aug 31 · Marghera overnight',checkout:'Sept 1 · Disembark Fusina',source:'',guide:'venice.html',maps:'https://maps.apple.com/?q=Fusina+Venice',arrival:'Aug 31: ship docks at Marghera and you remain aboard overnight. Sept 1: ship repositions to Fusina for disembarkation.',essentials:'Keep disembarkation documents, transfer instructions and the Hotel Al Sotoportego address available offline.',departure:'From Fusina, use the confirmed Viking transfer or a prearranged private vehicle + water-taxi transfer to the closest practical hotel landing.'},
+  {key:'venice',title:'Hotel Al Sotoportego',place:'Cannaregio · Venice',dates:'Sept 1–3',status:'Verified reservation',checkin:'From 3:00 PM',checkout:'11:00 AM',source:'',guide:'venice.html',maps:'https://maps.apple.com/?q=Hotel+Al+Sotoportego+Venice',arrival:'Arrive Sept 1 from Viking at Fusina. Ask the transfer provider for the closest practical landing to Hotel Al Sotoportego, then complete the short final walk with luggage.',essentials:'Save the hotel phone number, vaporetto route, nearby pharmacy and first-night dinner options before leaving Wi-Fi.',departure:'Confirm the route to the rental-car or rail connection and allow time for luggage over bridges.'},
   {key:'como',title:'Lake Front Apartment',place:'Lenno · Lake Como',dates:'Sept 3–6',status:'Verified reservation',checkin:'3:00 PM',checkout:'10:00 AM',source:'https://www.airbnb.com/rooms/7332996',guide:'lake-como.html',maps:'https://maps.apple.com/?q=Via+alla+Torre+9+Lenno+Italy',arrival:'Follow the host parking and key-access instructions; narrow village streets can make the final approach slower.',essentials:'Save ferry timetable screenshots, host contact details, grocery options and the apartment parking instructions.',departure:'Refuel if needed, photograph the property on departure and leave margin for the Stresa drive.'},
   {key:'stresa',title:'Il Dipinto Sul Lago',place:'Stresa center · Lake Maggiore',dates:'Sept 6–9',status:'Verified reservation',checkin:'September 6',checkout:'September 9',source:'https://www.happy.rentals/vacation-rental/11526-il-dipinto-sul-lago-stresa-center',guide:'lake-maggiore.html',maps:'https://maps.apple.com/?q=Stresa+Italy',arrival:'Use the private-garage instructions rather than navigating only to the town-center pin.',essentials:'Keep garage access, island-boat information, grocery hours and the Milan transfer plan together.',departure:'Pack the previous night, confirm the Milan parking strategy and avoid the busiest lakeside departure window.'},
-  {key:'milan',title:'Urban Hive Milano',place:'Brera · Milan',dates:'Sept 9–11',status:'Verified reservation',checkin:'From 3:00 PM',checkout:'11:00 AM',source:'https://maps.apple.com/?q=Urban+Hive+Milano+Corso+Garibaldi+84',guide:'milan.html',maps:'https://maps.apple.com/?q=Urban+Hive+Milano+Corso+Garibaldi+84',arrival:'Use the hotel’s recommended unloading approach and avoid accidentally entering restricted traffic areas.',essentials:'Confirm the pre-dawn taxi to LIN, complete airline check-in and organize breakfast or coffee for the early start.',departure:'Be fully packed before bed and reconfirm the taxi pickup for the 6:40 AM LIN departure.'}
+  {key:'milan',title:'Urban Hive Milano',place:'Brera · Milan',dates:'Sept 9–11',status:'Verified reservation',checkin:'From 3:00 PM',checkout:'11:00 AM',source:'https://maps.apple.com/?q=Urban+Hive+Milano+Corso+Garibaldi+84',guide:'milan.html',maps:'https://maps.apple.com/?q=Urban+Hive+Milano+Corso+Garibaldi+84',arrival:'Use the hotel’s recommended unloading approach and avoid accidentally entering restricted traffic areas.',essentials:'Confirm the hotel-arranged pre-dawn transfer to LIN, complete international airline check-in and organize breakfast or coffee for the early start.',departure:'Be fully packed before bed and reconfirm the hotel-arranged pickup for the 6:40 AM international KLM departure from LIN.'}
 ];
 const grid=document.getElementById('hotelGrid');
 stops.forEach(({key,title,place,dates,status,checkin,checkout,source,guide,maps,arrival,essentials,departure})=>{
@@ -67,7 +67,7 @@ stops.forEach(({key,title,place,dates,status,checkin,checkout,source,guide,maps,
   try{localStorage.removeItem('nitc-hotel-'+key)}catch(e){}
 });
 </script>
-<script src="assets/app.js?v=8.2.0"></script>
+<script src="assets/app.js?v=11.0.0"></script>
 <div aria-label="Travel shortcuts" class="travel-dock">
 <a class="dock-today" href="today.html"><span>Today</span><strong>Trip mode</strong></a>
 <a aria-label="Open maps" href="map.html">Map</a>

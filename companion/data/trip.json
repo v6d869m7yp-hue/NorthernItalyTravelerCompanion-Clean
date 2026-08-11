@@ -1,10 +1,10 @@
 {
-  "version": "8.2.0",
+  "version": "11.0.0",
   "travelers": "John & Lyla",
-  "title": "Northern Italy Traveler’s Companion",
-  "subtitle": "Independent Istanbul, Ancient Adriatic Treasures, and Northern Italy",
+  "title": "The Traveler’s Companion",
+  "subtitle": "Istanbul · Viking Ancient Adriatic Treasures · Northern Italy",
   "start": "2026-08-13",
-  "end": "2026-09-01",
+  "end": "2026-09-11",
   "ship": "Viking Vesta",
   "stateroom": "4121 · DV5",
   "hotel": "Dersaadet Hotel Istanbul",
@@ -20,7 +20,7 @@
       "date": "2026-08-14",
       "location": "Istanbul",
       "title": "Arrival & first evening",
-      "summary": "Transfer to Dersaadet Hotel and take a gentle Sultanahmet orientation walk.",
+      "summary": "Arrive at IST on KLM KL1959; use the private transfer being arranged through Dersaadet Hotel, then take a gentle Sultanahmet orientation walk.",
       "time": "Arrival"
     },
     {
@@ -137,17 +137,87 @@
     },
     {
       "date": "2026-08-31",
-      "location": "Venice",
-      "title": "At a Glance: St. Mark’s Square",
-      "summary": "Booked Viking excursion and transition toward Northern Italy.",
+      "location": "Venice · Marghera",
+      "title": "Venice excursion & Marghera overnight",
+      "summary": "Booked Viking excursion; ship docks at Marghera and remains there overnight.",
       "time": "12:45 PM"
     },
     {
       "date": "2026-09-01",
-      "location": "Venice",
-      "title": "Disembark & Northern Italy",
-      "summary": "Transfer to Hotel al Sotoportego and continue with the Northern Italy Companion.",
+      "location": "Venice · Fusina",
+      "title": "Disembark at Fusina & transfer to Venice",
+      "summary": "Ship repositions to Fusina for disembarkation; transfer with luggage to Hotel al Sotoportego.",
       "time": "Morning"
+    },
+    {
+      "date": "2026-09-02",
+      "location": "Venice",
+      "title": "Independent Venice",
+      "summary": "Full day for Venice from Hotel al Sotoportego.",
+      "time": "Full day"
+    },
+    {
+      "date": "2026-09-03",
+      "location": "Venice → Lake Como",
+      "title": "Transfer west",
+      "summary": "Collect the rental car and drive to Lake Como; Verona is an optional lunch stop.",
+      "time": "Transfer day"
+    },
+    {
+      "date": "2026-09-04",
+      "location": "Lake Como",
+      "title": "Lake Como",
+      "summary": "Central-lake ferries, Bellagio, Varenna and lakeside villas.",
+      "time": "Lake day"
+    },
+    {
+      "date": "2026-09-05",
+      "location": "Lake Como",
+      "title": "Flexible Lake Como day",
+      "summary": "Choose a second ferry circuit, villa visit, scenic drive or slower day.",
+      "time": "Flexible"
+    },
+    {
+      "date": "2026-09-06",
+      "location": "Lake Como → Stresa",
+      "title": "Transfer to Lake Maggiore",
+      "summary": "Move west to Stresa and settle in for three nights.",
+      "time": "Transfer day"
+    },
+    {
+      "date": "2026-09-07",
+      "location": "Stresa",
+      "title": "Borromean Islands",
+      "summary": "Use the clearest day for the Borromean Islands.",
+      "time": "Lake day"
+    },
+    {
+      "date": "2026-09-08",
+      "location": "Stresa / Piedmont",
+      "title": "Choose-your-day",
+      "summary": "Stay on Lake Maggiore or use the Piedmont wine-country day-trip guide.",
+      "time": "Flexible"
+    },
+    {
+      "date": "2026-09-09",
+      "location": "Stresa → Milan",
+      "title": "Urban Hive Milano",
+      "summary": "Travel to Milan and check in at Urban Hive for two nights.",
+      "time": "Transfer day"
+    },
+    {
+      "date": "2026-09-10",
+      "location": "Milan",
+      "title": "Full day in Milan",
+      "summary": "Brera, Duomo district, museum or shopping; pack for the early flight.",
+      "time": "Full day"
+    },
+    {
+      "date": "2026-09-11",
+      "location": "Milan → LIN",
+      "title": "International departure · KLM KL1612",
+      "summary": "Hotel-arranged transfer from Urban Hive to Milan Linate for the 6:40 AM international flight via Amsterdam.",
+      "time": "Early morning"
     }
   ]
 }

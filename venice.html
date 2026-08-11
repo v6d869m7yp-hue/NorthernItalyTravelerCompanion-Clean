@@ -8,7 +8,7 @@
 <link href="manifest.webmanifest" rel="manifest"/>
 <link href="assets/images/app-icon.png" rel="icon"/>
 <link href="assets/images/app-icon.png" rel="apple-touch-icon"/>
-<link href="assets/style.css?v=8.2.0" rel="stylesheet"/>
+<link href="assets/style.css?v=11.0.0" rel="stylesheet"/>
 <title>Venice · Northern Italy Traveler's Companion</title>
 <meta content="Venice · Northern Italy Traveler's Companion. Personalized September 2026 Northern Italy itinerary, reservations, maps and practical travel guidance." name="description"/><meta content="light" name="color-scheme"/></head>
 <body class="venice-chapter destination-template" data-destination="venice">
@@ -55,7 +55,7 @@
 <div class="hotel-actions">
 <a class="hotel-action primary" href="https://maps.apple.com/?q=Hotel+Al+Sotoportego+Cannaregio+5595%2FA+Venice" rel="noopener noreferrer" target="_blank"><b>Open hotel map</b><span>Directions and walking route</span></a>
 <a class="hotel-action" href="https://www.expedia.com/Venice-Hotels-Hotel-Al-Sotoportego.h72302294.Hotel-Information" rel="noopener noreferrer" target="_blank"><b>Property page</b><span>Photos and hotel details</span></a>
-<a class="hotel-action" href="#arrival-concierge"><b>Arrival concierge</b><span>Airport and station options</span></a>
+<a class="hotel-action" href="#arrival-concierge"><b>Arrival concierge</b><span>Fusina disembarkation transfer</span></a>
 <a class="hotel-action" href="#first-evening"><b>First evening</b><span>A relaxed route from the hotel</span></a>
 </div>
 </div>
@@ -70,10 +70,10 @@
 <p class="photo-note">These illustrated spreads are orientation aids; open the property listing for current room photographs.</p>
 </section>
 <section class="arrival-concierge destination-section" id="arrival-concierge">
-<div class="concierge-intro"><div class="eyebrow">Arrival concierge</div><h2>Reach the hotel without turning arrival day into an expedition.</h2><p>The entrance is intentionally discreet. Save the map pin before traveling and keep the street number—5595/A—visible when you are close.</p></div>
+<div class="concierge-intro"><div class="eyebrow">Arrival concierge</div><h2>Reach the hotel without turning arrival day into an expedition.</h2><p>On Aug. 31 Viking docks at Marghera; on Sept. 1 the ship repositions to Fusina for disembarkation. From Fusina, transfer to Hotel al Sotoportego. The entrance is intentionally discreet—save the map pin and keep street number 5595/A visible for the final walk.</p></div>
 <div class="arrival-grid">
-<article><span class="arrival-number">01</span><h3>From Marco Polo Airport</h3><p><strong>Easiest:</strong> private water taxi for door-to-dock simplicity. <strong>Best-value water route:</strong> Alilaguna to Fondamente Nove, then walk to the hotel. Confirm the operating timetable shortly before travel.</p><a href="https://maps.apple.com/?saddr=Marco+Polo+Airport+Venice&amp;daddr=Hotel+Al+Sotoportego+Venice" rel="noopener noreferrer" target="_blank">Open airport route</a></article>
-<article><span class="arrival-number">02</span><h3>From Santa Lucia Station</h3><p>The hotel is roughly a 20-minute walk in normal conditions. With luggage, a vaporetto or water taxi may be more comfortable than navigating bridges and crowded lanes.</p><a href="https://maps.apple.com/?saddr=Venezia+Santa+Lucia&amp;daddr=Hotel+Al+Sotoportego+Venice" rel="noopener noreferrer" target="_blank">Open station route</a></article>
+<article><span class="arrival-number">01</span><h3>From Viking at Fusina</h3><p><strong>Sept. 1:</strong> disembark Viking at Fusina. With four adults and cruise luggage, favor a prearranged private transfer from the cruise terminal into Venice rather than improvising with public transport. Follow Viking’s final terminal instructions first.</p><a href="https://maps.apple.com/?saddr=Fusina+Venice&amp;daddr=Hotel+Al+Sotoportego+Venice" rel="noopener noreferrer" target="_blank">Open Fusina transfer plan</a></article>
+<article><span class="arrival-number">02</span><h3>Fusina → Venice</h3><p>A practical private transfer can combine a vehicle from the Fusina cruise terminal with a water taxi to the closest accessible landing in Venice. Confirm the exact landing and final walking segment with the provider before travel.</p><a href="https://maps.apple.com/?saddr=Fusina+Venice&amp;daddr=Hotel+Al+Sotoportego+Venice" rel="noopener noreferrer" target="_blank">Open hotel arrival route</a></article>
 <article><span class="arrival-number">03</span><h3>At the final doorway</h3><p>Do not expect a grand street-facing hotel façade. Match the building number, look for the hotel sign/intercom, and keep any Expedia check-in message available offline.</p><a href="reservations.html">Open reservations</a></article>
 </div>
 </section>
@@ -233,7 +233,7 @@
 </main>
 <div aria-hidden="true" class="lightbox" id="lightbox"><button aria-label="Close">×</button><img alt="" decoding="async" loading="lazy"/></div>
 <div class="bottomnav"><a href="index.html">Home</a><a href="#itinerary">Days</a><a href="#restaurants">Dining</a><a href="#dont-miss">Highlights</a></div>
-<footer>Venice · Traveler’s Edition · September 2026 Edition · v8.2.0</footer>
+<footer>Venice · Traveler’s Edition · September 2026 Edition · v11.0.0</footer>
 <script>
 const lb=document.getElementById('lightbox'), lbImg=lb.querySelector('img');
 document.querySelectorAll('.page-spread img').forEach(image=>image.addEventListener('click',()=>{lbImg.src=image.src;lbImg.alt=image.alt;lb.classList.add('open')}));
@@ -241,9 +241,9 @@ function closeLB(){lb.classList.remove('open');lbImg.src=''}
 lb.querySelector('button').addEventListener('click',closeLB);
 lb.addEventListener('click',event=>{if(event.target===lb)closeLB()});
 document.addEventListener('keydown',event=>{if(event.key==='Escape')closeLB()});
-if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js?v=8.2.0')}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('service-worker.js?v=11.0.0')}
 </script>
-<script src="assets/app.js?v=8.2.0"></script>
+<script src="assets/app.js?v=11.0.0"></script>
 <div aria-label="Travel shortcuts" class="travel-dock">
 <a class="dock-today" href="today.html"><span>Today</span><strong>Trip mode</strong></a>
 <a aria-label="Open maps" href="map.html">Map</a>
