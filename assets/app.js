@@ -129,7 +129,7 @@
     const journeyNav = document.createElement('nav');
     journeyNav.className = 'journey-switcher';
     journeyNav.setAttribute('aria-label', 'Switch journey companion');
-    journeyNav.innerHTML = `<a href="companion/istanbul/index.html">Istanbul</a><a href="companion/ports/venice/index.html">Cruise: Venice</a><a class="primary" href="companion/index.html">Full Companion →</a>`;
+    journeyNav.innerHTML = `<a href="companion/istanbul/index.html">Istanbul</a><a href="companion/ports/venice/index.html">Cruise: Venice</a><a class="primary" href="companion/index.html">Trip Hub →</a>`;
     document.body.appendChild(journeyNav);
   }
 
