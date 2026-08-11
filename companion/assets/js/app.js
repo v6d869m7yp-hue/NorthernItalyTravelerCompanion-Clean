@@ -92,7 +92,7 @@ function unifiedJourneySwitcher(){
   window.resetJourneySwitcherPosition=()=>{localStorage.removeItem(storageKey);restore();nav.classList.add('position-reset');setTimeout(()=>nav.classList.remove('position-reset'),500)};
 }
 
-const APP_RELEASE={version:'11.0.0',buildId:'v11.0.0-unified-journey-release'};
+const APP_RELEASE={version:'11.0.1',buildId:'v11.0.1-unified-journey-release'};
 let updateRegistration=null;
 let appUpdatesPromise=null;
 function showUpdateBanner(reg){
@@ -381,7 +381,6 @@ function setupTravelMode(){
     button.className='travel-mode-toggle';
     button.setAttribute('data-travel-mode-toggle','');
     button.innerHTML='<span aria-hidden="true">✈</span><span data-travel-mode-label>Travel mode</span>';
-    button.addEventListener('click',()=>setTravelMode(!isTravelMode()));
     tools.prepend(button);
   }
   if(!document.querySelector('.travel-dock')){
@@ -396,7 +395,23 @@ function setupTravelMode(){
     skip=document.createElement('a');skip.className='skip-link';skip.href='#main-content';skip.textContent='Skip to main content';document.body.prepend(skip);
   }
   const main=document.querySelector('main');if(main&&!main.id)main.id='main-content';
+  document.querySelectorAll('[data-travel-mode-toggle]').forEach(button=>{
+    if(button.dataset.travelModeBound)return;
+    button.dataset.travelModeBound='true';
+    button.addEventListener('click',()=>setTravelMode(!isTravelMode()));
+  });
   setTravelMode(enabled);
+}
+
+
+function setupBackToTop(){
+  if(document.querySelector('.back-to-top'))return;
+  const button=document.createElement('button');
+  button.type='button';button.className='back-to-top';button.setAttribute('aria-label','Back to top');button.textContent='↑ Top';
+  document.body.appendChild(button);
+  const update=()=>button.classList.toggle('visible',window.scrollY>650);
+  button.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  window.addEventListener('scroll',update,{passive:true});update();
 }
 
 document.addEventListener('DOMContentLoaded',async()=>{
@@ -413,7 +428,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
   let trip=null;
   try{trip=await shell();}catch(err){console.error('App shell failed',err);}
   try{setupGlobalRecovery();setupConnectivityStatus();}catch(err){console.warn('Production recovery setup failed',err);}
-  try{setupTravelMode();}catch(err){console.warn('Travel mode setup failed',err);}
+  try{setupTravelMode();setupBackToTop();}catch(err){console.warn('Travel mode/navigation setup failed',err);}
   try{unifiedJourneySwitcher();}catch(err){console.warn('Journey switcher failed',err);}
   try{await Promise.race([setupAppUpdates(),new Promise(resolve=>setTimeout(resolve,6000))]);}catch(err){console.warn('App update setup failed',err);}
 

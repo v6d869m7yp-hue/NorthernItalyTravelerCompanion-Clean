@@ -133,6 +133,15 @@
     document.body.appendChild(journeyNav);
   }
 
+  if (!document.querySelector('.back-to-top')) {
+    const topButton=document.createElement('button');
+    topButton.type='button'; topButton.className='back-to-top'; topButton.setAttribute('aria-label','Back to top'); topButton.textContent='↑ Top';
+    document.body.appendChild(topButton);
+    const updateTop=()=>topButton.classList.toggle('visible',window.scrollY>650);
+    topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    window.addEventListener('scroll',updateTop,{passive:true}); updateTop();
+  }
+
   // Make existing chapter-spread lightboxes keyboard and screen-reader friendly.
   const zoomableImages = document.querySelectorAll('.spread img, .page-spread img');
   zoomableImages.forEach((image) => {
